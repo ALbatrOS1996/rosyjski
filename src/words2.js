@@ -1,0 +1,480 @@
+/* ============================================================
+   ŚCIEŻKA A2–C2 – lekcje ułożone progresywnie
+   L(poziom, id, nazwa) – nowa lekcja; W(...) jak w words.js.
+   W przykładzie słowo docelowe ujęte w {…} – służy do ćwiczeń z luką.
+   ============================================================ */
+var UA = window.UA || (window.UA = {});
+(function () {
+  var cur;
+  function L(level, id, name) { cur = id; UA.TOPICS.push({ id: id, name: name, level: level }); }
+  function W(ua, pos, pl, forms, sim, ex, exPl) {
+    UA.WORDS.push({ ua: ua, pos: pos, pl: pl, forms: forms || '', sim: sim, ex: ex || '', exPl: exPl || '', topic: cur });
+  }
+
+  /* ===================== A2 ===================== */
+  L('A2', 'a2_poezdki', 'Podróże');
+  W('путеше́ствие', 'с', 'podróż', 'D. путеше́ствия', 'o', 'Мы пла́нируем {путеше́ствие} по Байка́лу.', 'Planujemy podróż nad Bajkał.');
+  W('самолёт', 'ч', 'samolot', 'D. самолёта', 'p', '{Самолёт} прилете́л во́время.', 'Samolot przyleciał punktualnie.');
+  W('аэропо́рт', 'ч', 'lotnisko', 'D. аэропо́рта', 'p', 'Как дое́хать до {аэропо́рта}?', 'Jak dojechać na lotnisko?');
+  W('чемода́н', 'ч', 'walizka', 'D. чемода́на', 'o', 'Мой {чемода́н} о́чень тяжёлый.', 'Moja walizka jest bardzo ciężka.');
+  W('па́спорт', 'ч', 'paszport', 'D. па́спорта · lm. паспорта́', 't', 'Покажи́те, пожа́луйста, ваш {па́спорт}.', 'Proszę pokazać paszport.');
+  W('грани́ца', 'ж', 'granica', 'D. грани́цы · за грани́цей – za granicą', 'p', 'Мы пересекли́ {грани́цу} но́чью.', 'Przekroczyliśmy granicę w nocy.');
+  W('гости́ница', 'ж', 'hotel', 'D. гости́ницы · też: оте́ль', 'f', '{Гости́ница} нахо́дится в це́нтре.', 'Hotel znajduje się w centrum.');
+  W('бронирова́ть / заброни́ровать', 'д', 'rezerwować / zarezerwować', 'брони́рую, брони́руешь', 'p', 'Я {заброни́ровал} но́мер на две но́чи.', 'Zarezerwowałem pokój na dwie noce.');
+  W('о́тпуск', 'ч', 'urlop', 'D. о́тпуска', 'f', 'Ле́том у меня́ {о́тпуск}.', 'Latem mam urlop.');
+  W('достопримеча́тельность', 'ж', 'zabytek, atrakcja', 'D. достопримеча́тельности', 'o', 'Кремль – гла́вная {достопримеча́тельность} Москвы́.', 'Kreml to główny zabytek Moskwy.');
+  W('экску́рсия', 'ж', 'wycieczka z przewodnikiem', 'D. экску́рсии', 'p', 'За́втра у нас {экску́рсия} по го́роду.', 'Jutro mamy wycieczkę po mieście.');
+  W('пересе́дка', 'ж', 'przesiadka', 'D. пересе́дки', 'p', 'В Москве́ у нас {пересе́дка}.', 'W Moskwie mamy przesiadkę.');
+
+  L('A2', 'a2_odezhda', 'Ubrania');
+  W('оде́жда', 'ж', 'ubranie, odzież', 'D. оде́жды', 'p', 'Где мо́жно купи́ть дешёвую {оде́жду}?', 'Gdzie można kupić tanie ubrania?');
+  W('брю́ки', 'мн', 'spodnie', 'D. брюк', 'o', 'Э́ти {брю́ки} сли́шком дли́нные.', 'Te spodnie są za długie.');
+  W('руба́шка', 'ж', 'koszula', 'D. руба́шки', 'p', 'Он но́сит бе́лую {руба́шку}.', 'On nosi białą koszulę.');
+  W('пла́тье', 'с', 'sukienka', 'D. пла́тья', 'p', 'Тебе́ идёт э́то {пла́тье}.', 'Dobrze ci w tej sukience.');
+  W('ю́бка', 'ж', 'spódnica', 'D. ю́бки', 'o', 'Она́ но́сит коро́ткую {ю́бку}.', 'Ona nosi krótką spódnicę.');
+  W('ку́ртка', 'ж', 'kurtka', 'D. ку́ртки', 't', 'Возьми́ {ку́ртку}, на у́лице хо́лодно.', 'Weź kurtkę, na dworze jest zimno.');
+  W('пальто́', 'с', 'płaszcz', 'nieodmienne', 'p', 'Э́то {пальто́} о́чень тёплое.', 'Ten płaszcz jest bardzo ciepły.');
+  W('о́бувь', 'ж', 'obuwie', 'D. о́буви', 'p', 'Где здесь отде́л {о́буви}?', 'Gdzie tu jest dział z obuwiem?');
+  W('разме́р', 'ч', 'rozmiar', 'D. разме́ра', 'p', 'У вас есть со́рок второ́й {разме́р}?', 'Czy macie rozmiar czterdzieści dwa?');
+  W('примеря́ть / приме́рить', 'д', 'przymierzać / przymierzyć', 'примеря́ю · приме́рю', 'p', 'Мо́жно {приме́рить}?', 'Czy mogę przymierzyć?');
+  W('носи́ть', 'д', 'nosić (ubranie)', 'ношу́, но́сишь', 'p', 'Она́ лю́бит {носи́ть} джи́нсы.', 'Ona lubi nosić dżinsy.');
+  W('идти́ (кому́)', 'ф', 'pasować, być do twarzy', 'тебе́ идёт – pasuje ci', 'o', 'Э́тот цвет тебе́ о́чень {идёт}.', 'Bardzo ci w tym kolorze do twarzy.');
+
+  L('A2', 'a2_dosug', 'Czas wolny i sport');
+  W('свобо́дное вре́мя', 'ф', 'czas wolny', '', 'p', 'В {свобо́дное вре́мя} я мно́го чита́ю.', 'W czasie wolnym dużo czytam.');
+  W('хо́бби', 'с', 'hobby', 'nieodmienne', 't', 'Моё {хо́бби} – фотогра́фия.', 'Moje hobby to fotografia.');
+  W('спорт', 'ч', 'sport', 'D. спо́рта', 't', 'Я занима́юсь {спо́ртом} три ра́за в неде́лю.', 'Uprawiam sport trzy razy w tygodniu.');
+  W('кома́нда', 'ж', 'drużyna', 'D. кома́нды', 'f', 'На́ша {кома́нда} вы́играла.', 'Nasza drużyna wygrała.');
+  W('выи́грывать / вы́играть', 'д', 'wygrywać / wygrać', 'выи́грываю · вы́играю', 'p', 'Кто {вы́играл} матч?', 'Kto wygrał mecz?');
+  W('прои́грывать / проигра́ть', 'д', 'przegrywać / przegrać', 'прои́грываю · проигра́ю', 'p', 'Мы {проигра́ли} два – оди́н.', 'Przegraliśmy dwa do jednego.');
+  W('пла́вать', 'д', 'pływać', 'пла́ваю, пла́ваешь', 'p', 'Ле́том мы {пла́ваем} в о́зере.', 'Latem pływamy w jeziorze.');
+  W('гуля́ть / погуля́ть', 'д', 'spacerować / pospacerować', 'гуля́ю, гуля́ешь', 'f', 'Мы {гуля́ем} в па́рке.', 'Spacerujemy w parku.');
+  W('кино́', 'с', 'kino', 'nieodmienne', 't', 'Пойдём сего́дня в {кино́}?', 'Pójdziemy dziś do kina?');
+  W('конце́рт', 'ч', 'koncert', 'D. конце́рта', 't', '{Конце́рт} начина́ется в во́семь.', 'Koncert zaczyna się o ósmej.');
+  W('выходны́е', 'мн', 'weekend', 'D. выходны́х · на выходны́х', 'o', 'Что ты де́лаешь на {выходны́х}?', 'Co robisz w weekend?');
+  W('встреча́ться / встре́титься', 'д', 'spotykać się / spotkać się', 'встреча́юсь · встре́чусь', 'p', 'Мы {встреча́емся} в шесть у кинотеа́тра.', 'Spotykamy się o szóstej przed kinem.');
+
+  L('A2', 'a2_rabota', 'Praca i biuro');
+  W('фи́рма', 'ж', 'firma', 'D. фи́рмы · też: компа́ния', 't', 'Я рабо́таю в ма́ленькой {фи́рме}.', 'Pracuję w małej firmie.');
+  W('о́фис', 'ч', 'biuro', 'D. о́фиса', 'p', 'Я в {о́фисе} до пяти́.', 'Jestem w biurze do piątej.');
+  W('нача́льник', 'ч', 'szef, przełożony', 'D. нача́льника', 'p', 'Мой {нача́льник} сего́дня в командиро́вке.', 'Mój szef jest dziś w delegacji.');
+  W('колле́га', 'ч', 'kolega z pracy', 'D. колле́ги (odmiana jak rz. żeńskie)', 'p', 'Мой {колле́га} ча́сто мне помога́ет.', 'Mój kolega często mi pomaga.');
+  W('зарпла́та', 'ж', 'pensja', 'D. зарпла́ты', 'o', '{Зарпла́ту} получа́ем в конце́ ме́сяца.', 'Pensję dostajemy pod koniec miesiąca.');
+  W('встре́ча', 'ж', 'spotkanie', 'D. встре́чи', 'p', 'У меня́ за́втра ва́жная {встре́ча}.', 'Mam jutro ważne spotkanie.');
+  W('совеща́ние', 'с', 'narada, zebranie', 'D. совеща́ния', 'o', '{Совеща́ние} продолжа́ется час.', 'Zebranie trwa godzinę.');
+  W('рабо́чее ме́сто', 'ф', 'stanowisko pracy; posada', '', 'p', 'Она́ нашла́ но́вое {рабо́чее ме́сто}.', 'Ona znalazła nową posadę.');
+  W('резюме́', 'с', 'życiorys, CV', 'nieodmienne · czyt. [рэзюмэ́]', 'p', 'Пришли́те нам ва́ше {резюме́}.', 'Proszę przesłać nam swoje CV.');
+  W('зараба́тывать / зарабо́тать', 'д', 'zarabiać / zarobić', 'зараба́тываю · зарабо́таю', 'p', 'Он хорошо́ {зараба́тывает}.', 'On dobrze zarabia.');
+  W('командиро́вка', 'ж', 'delegacja, wyjazd służbowy', 'D. командиро́вки', 'p', 'На сле́дующей неде́ле я в {командиро́вке}.', 'W przyszłym tygodniu jestem w delegacji.');
+  W('увольня́ться / уво́литься', 'д', 'zwalniać się (z pracy) / zwolnić się', 'увольня́юсь · уво́люсь', 'o', 'Она́ {уво́лилась} в про́шлом ме́сяце.', 'Ona zwolniła się w zeszłym miesiącu.');
+
+  L('A2', 'a2_chuvstva', 'Uczucia i charakter');
+  W('ра́достный', 'п', 'radosny', '', 'p', 'Сего́дня {ра́достный} день.', 'Dziś jest radosny dzień.');
+  W('гру́стный', 'п', 'smutny', '', 'o', 'Почему́ ты тако́й {гру́стный}?', 'Dlaczego jesteś taki smutny?');
+  W('серди́тый', 'п', 'zły, rozgniewany', '', 'o', 'Он был о́чень {серди́тый}.', 'Był bardzo zły.');
+  W('волнова́ться', 'д', 'denerwować się, martwić się', 'волну́юсь, волну́ешься', 'o', 'Пе́ред экза́меном я всегда́ {волну́юсь}.', 'Przed egzaminem zawsze się denerwuję.');
+  W('страх', 'ч', 'strach', 'D. стра́ха', 't', 'У него́ {страх} высоты́.', 'On ma lęk wysokości.');
+  W('любо́вь', 'ж', 'miłość', 'D. любви́', 'p', 'Э́то была́ {любо́вь} с пе́рвого взгля́да.', 'To była miłość od pierwszego wejrzenia.');
+  W('ми́лый', 'п', 'miły; kochany', '', 'p', 'Твоя́ сестра́ о́чень {ми́лая}.', 'Twoja siostra jest bardzo miła.');
+  W('до́брый', 'п', 'dobry, życzliwy', '', 'p', 'Он о́чень {до́брый} челове́к.', 'On jest bardzo dobrym człowiekiem.');
+  W('че́стный', 'п', 'uczciwy, szczery', '', 'p', 'Будь со мной {че́стным}.', 'Bądź ze mną szczery.');
+  W('лени́вый', 'п', 'leniwy', '', 'p', 'В воскресе́нье я {лени́вый}.', 'W niedzielę jestem leniwy.');
+  W('трудолюби́вый', 'п', 'pracowity', '', 'p', 'Она́ о́чень {трудолюби́вая} студе́нтка.', 'Ona jest bardzo pracowitą studentką.');
+  W('ра́доваться / обра́доваться', 'д', 'cieszyć się / ucieszyć się', 'ра́дуюсь, ра́дуешься', 'p', 'Я {ра́дуюсь} твоему́ успе́ху.', 'Cieszę się z twojego sukcesu.');
+
+  L('A2', 'a2_byt', 'Dom i obowiązki');
+  W('убира́ть / убра́ть', 'д', 'sprzątać / posprzątać', 'убира́ю · уберу́', 'o', 'В суббо́ту мы {убира́ем} кварти́ру.', 'W sobotę sprzątamy mieszkanie.');
+  W('гото́вить / пригото́вить', 'д', 'gotować / ugotować; przygotować', 'гото́влю, гото́вишь', 'p', 'Мой муж прекра́сно {гото́вит}.', 'Mój mąż świetnie gotuje.');
+  W('стира́ть / постира́ть', 'д', 'prać / uprać', 'стира́ю', 'f', 'Мне ну́жно {постира́ть} бельё.', 'Muszę zrobić pranie.');
+  W('мыть / помы́ть', 'д', 'myć / umyć', 'мо́ю, мо́ешь', 'p', 'Кто сего́дня {мо́ет} посу́ду?', 'Kto dziś zmywa naczynia?');
+  W('му́сор', 'ч', 'śmieci', 'D. му́сора', 'o', 'Вы́неси, пожа́луйста, {му́сор}.', 'Wynieś, proszę, śmieci.');
+  W('холоди́льник', 'ч', 'lodówka', 'D. холоди́льника', 'p', '{Холоди́льник} пусто́й.', 'Lodówka jest pusta.');
+  W('стира́льная маши́на', 'ф', 'pralka', '', 'p', '{Стира́льная маши́на} слома́лась.', 'Pralka się zepsuła.');
+  W('кварпла́та', 'ж', 'czynsz (opłaty za mieszkanie)', 'D. кварпла́ты', 'o', '{Кварпла́та} о́чень высо́кая.', 'Czynsz jest bardzo wysoki.');
+  W('переезжа́ть / перее́хать', 'д', 'przeprowadzać się / przeprowadzić się', 'переезжа́ю · перее́ду', 'p', 'Мы {переезжа́ем} в сле́дующем ме́сяце.', 'Przeprowadzamy się w przyszłym miesiącu.');
+  W('сад', 'ч', 'ogród (z drzewami)', 'D. са́да · в саду́', 'p', 'Де́ти игра́ют в {саду́}.', 'Dzieci bawią się w ogrodzie.');
+  W('да́ча', 'ж', 'dacza, domek letniskowy', 'D. да́чи', 'p', 'Ле́том мы живём на {да́че}.', 'Latem mieszkamy na daczy.');
+  W('сосе́дка', 'ж', 'sąsiadka', 'D. сосе́дки', 'p', 'Моя́ {сосе́дка} поли́вает цветы́.', 'Moja sąsiadka podlewa kwiaty.');
+
+  L('A2', 'a2_restoran', 'Restauracja i gotowanie');
+  W('меню́', 'с', 'menu, karta dań', 'nieodmienne', 't', 'Да́йте, пожа́луйста, {меню́}.', 'Poproszę menu.');
+  W('зака́зывать / заказа́ть', 'д', 'zamawiać / zamówić', 'зака́зываю · закажу́', 'p', 'Вы уже́ {заказа́ли}?', 'Czy już państwo zamówili?');
+  W('официа́нт', 'ч', 'kelner', 'D. официа́нта · ż. официа́нтка', 'o', '{Официа́нт} прино́сит счёт.', 'Kelner przynosi rachunek.');
+  W('заку́ска', 'ж', 'przekąska, przystawka', 'D. заку́ски', 'p', 'На {заку́ску} я возьму́ сала́т.', 'Na przystawkę wezmę sałatkę.');
+  W('десе́рт', 'ч', 'deser', 'D. десе́рта', 't', 'На {десе́рт} у нас моро́женое.', 'Na deser mamy lody.');
+  W('чаевы́е', 'мн', 'napiwek', 'D. чаевы́х', 'o', 'Обы́чно оставля́ют де́сять проце́нтов {чаевы́х}.', 'Zwykle zostawia się dziesięć procent napiwku.');
+  W('о́стрый', 'п', 'ostry', '', 'p', 'Э́то блю́до о́чень {о́строе}?', 'Czy to danie jest bardzo ostre?');
+  W('сла́дкий', 'п', 'słodki', '', 'p', 'Торт сли́шком {сла́дкий}.', 'Tort jest za słodki.');
+  W('жа́рить / пожа́рить', 'д', 'smażyć / usmażyć', 'жа́рю, жа́ришь', 'p', 'Я {жа́рю} мя́со на ма́сле.', 'Smażę mięso na maśle.');
+  W('реце́пт', 'ч', 'przepis; recepta', 'D. реце́пта', 't', 'Да́й мне {реце́пт} э́того пирога́.', 'Daj mi przepis na ten placek.');
+  W('блю́до', 'с', 'danie, potrawa', 'D. блю́да', 'f', 'Како́е {блю́до} вы рекоменду́ете?', 'Jakie danie pan poleca?');
+  W('сы́тый', 'п', 'syty, najedzony', '', 'p', 'Спаси́бо, я уже́ {сы́тый}.', 'Dziękuję, już się najadłem.');
+
+  L('A2', 'a2_tehnika', 'Technologia');
+  W('телефо́н', 'ч', 'telefon', 'D. телефо́на · potocznie: моби́льник', 't', 'У меня́ сел {телефо́н}.', 'Rozładował mi się telefon.');
+  W('компью́тер', 'ч', 'komputer', 'D. компью́тера', 't', '{Компью́тер} рабо́тает о́чень ме́дленно.', 'Komputer działa bardzo wolno.');
+  W('паро́ль', 'ч', 'hasło', 'D. паро́ля', 'p', 'Я забы́л {паро́ль}.', 'Zapomniałem hasła.');
+  W('скача́ть', 'д', 'pobrać (z sieci)', 'скача́ю · ndk. ска́чивать', 'o', 'Приложе́ние мо́жно {скача́ть} беспла́тно.', 'Aplikację można pobrać za darmo.');
+  W('сообще́ние', 'с', 'wiadomość', 'D. сообще́ния', 'o', 'Пришли́ мне {сообще́ние}!', 'Wyślij mi wiadomość!');
+  W('экра́н', 'ч', 'ekran', 'D. экра́на', 't', '{Экра́н} сли́шком тёмный.', 'Ekran jest za ciemny.');
+  W('связь', 'ж', 'łączność, zasięg', 'D. свя́зи', 'p', 'Здесь нет {свя́зи}.', 'Tu nie ma zasięgu.');
+  W('заряжа́ть / заряди́ть', 'д', 'ładować / naładować', 'заряжа́ю · заряжу́', 'o', 'Мне ну́жно {заряди́ть} телефо́н.', 'Muszę naładować telefon.');
+  W('сохраня́ть / сохрани́ть', 'д', 'zapisywać / zapisać; zachować', 'сохраня́ю · сохраню́', 'p', 'Не забу́дь {сохрани́ть} файл!', 'Nie zapomnij zapisać pliku!');
+  W('файл', 'ч', 'plik', 'D. фа́йла', 't', 'Я пошлю́ тебе́ {файл} по по́чте.', 'Wyślę ci plik mailem.');
+  W('печа́тать / напеча́тать', 'д', 'drukować / wydrukować', 'печа́таю', 'p', 'Ты мо́жешь э́то {напеча́тать}?', 'Możesz to wydrukować?');
+  W('слома́ться', 'д', 'zepsuć się', 'слома́ется · ndk. лома́ться', 'p', 'При́нтер опя́ть {слома́лся}.', 'Drukarka znowu się zepsuła.');
+
+  /* ===================== B1 ===================== */
+  L('B1', 'b1_dvizhenie', 'Czasowniki ruchu');
+  W('ходи́ть', 'д', 'chodzić (wielokrotnie, tam i z powrotem)', 'хожу́, хо́дишь', 'p', 'Я ка́ждый день {хожу́} в шко́лу.', 'Codziennie chodzę do szkoły.');
+  W('е́здить', 'д', 'jeździć (wielokrotnie)', 'е́зжу, е́здишь', 'p', 'Ле́том мы {е́здим} на мо́ре.', 'Latem jeździmy nad morze.');
+  W('лете́ть / полете́ть', 'д', 'lecieć / polecieć (w jedną stronę)', 'лечу́, лети́шь', 'p', 'За́втра я {лечу́} в Пари́ж.', 'Jutro lecę do Paryża.');
+  W('лета́ть', 'д', 'latać (wielokrotnie)', 'лета́ю, лета́ешь', 'p', 'Я ча́сто {лета́ю} в командиро́вки.', 'Często latam w delegacje.');
+  W('приходи́ть / прийти́', 'д', 'przychodzić / przyjść', 'прихожу́ · приду́, придёшь · пришёл', 'p', 'Когда́ ты {придёшь}?', 'Kiedy przyjdziesz?');
+  W('уходи́ть / уйти́', 'д', 'wychodzić, odchodzić / wyjść, odejść', 'ухожу́ · уйду́ · ушёл', 'p', 'Мне пора́ {уходи́ть}.', 'Muszę już iść.');
+  W('выходи́ть / вы́йти', 'д', 'wychodzić / wyjść (na zewnątrz)', 'выхожу́ · вы́йду · вы́шел', 'p', 'Вы {выхо́дите} на сле́дующей?', 'Wysiada pan na następnym?');
+  W('входи́ть / войти́', 'д', 'wchodzić / wejść', 'вхожу́ · войду́ · вошёл', 'p', 'Мо́жно {войти́}?', 'Można wejść?');
+  W('переходи́ть / перейти́', 'д', 'przechodzić / przejść (przez coś)', 'перехожу́ · перейду́', 'p', '{Перейди́те} у́лицу на зелёный свет.', 'Proszę przejść przez ulicę na zielonym świetle.');
+  W('приезжа́ть / прие́хать', 'д', 'przyjeżdżać / przyjechać', 'приезжа́ю · прие́ду', 'p', 'Ма́ма {прие́дет} в суббо́ту.', 'Mama przyjedzie w sobotę.');
+  W('нести́ / носи́ть', 'д', 'nieść (jednokier.) / nosić (wielokier.)', 'несу́, несёшь · нёс, несла́', 'p', 'Что ты {несёшь}?', 'Co niesiesz?');
+  W('вести́ / води́ть', 'д', 'prowadzić (pieszo); kierować (autem: води́ть)', 'веду́ · вожу́, во́дишь', 'p', 'Ты уме́ешь {води́ть} маши́ну?', 'Umiesz prowadzić samochód?');
+
+  L('B1', 'b1_smi', 'Media i informacja');
+  W('газе́та', 'ж', 'gazeta', 'D. газе́ты', 't', 'Ка́ждое у́тро я чита́ю {газе́ту}.', 'Codziennie rano czytam gazetę.');
+  W('переда́ча', 'ж', 'program, audycja', 'D. переда́чи', 'p', '{Переда́ча} начина́ется в во́семь.', 'Program zaczyna się o ósmej.');
+  W('статья́', 'ж', 'artykuł', 'D. статьи́', 'o', 'Я прочита́л интере́сную {статью́}.', 'Przeczytałem ciekawy artykuł.');
+  W('рекла́ма', 'ж', 'reklama', 'D. рекла́мы', 't', 'По телеви́зору сли́шком мно́го {рекла́мы}.', 'W telewizji jest za dużo reklam.');
+  W('заголо́вок', 'ч', 'nagłówek, tytuł', 'D. заголо́вка', 'o', '{Заголо́вок} был обма́нчивым.', 'Nagłówek wprowadzał w błąd.');
+  W('публикова́ть / опубликова́ть', 'д', 'publikować / opublikować', 'публику́ю', 't', 'Газе́та {опубликова́ла} интервью́.', 'Gazeta opublikowała wywiad.');
+  W('исто́чник', 'ч', 'źródło', 'D. исто́чника', 'p', 'Всегда́ проверя́й {исто́чник}!', 'Zawsze sprawdzaj źródło!');
+  W('фейк', 'ч', 'fake news, fałszywka', 'D. фе́йка', 't', 'Э́та но́вость – {фейк}.', 'Ta wiadomość to fałszywka.');
+  W('зри́тель', 'ч', 'widz', 'D. зри́теля', 'o', '{Зри́тели} бы́ли в восто́рге.', 'Widzowie byli zachwyceni.');
+  W('мне́ние', 'с', 'opinia, zdanie', 'D. мне́ния', 'p', 'По моему́ {мне́нию}, э́то оши́бка.', 'Moim zdaniem to błąd.');
+  W('актуа́льный', 'п', 'aktualny', '', 't', 'Э́то о́чень {актуа́льная} те́ма.', 'To bardzo aktualny temat.');
+  W('цензу́ра', 'ж', 'cenzura', 'D. цензу́ры', 't', 'В демокра́тии нет {цензу́ры}.', 'W demokracji nie ma cenzury.');
+
+  L('B1', 'b1_obshchestvo', 'Społeczeństwo');
+  W('о́бщество', 'с', 'społeczeństwo', 'D. о́бщества', 'p', '{О́бщество} старе́ет.', 'Społeczeństwo się starzeje.');
+  W('населе́ние', 'с', 'ludność', 'D. населе́ния', 'p', '{Населе́ние} го́рода растёт.', 'Ludność miasta rośnie.');
+  W('граждани́н', 'ч', 'obywatel', 'D. граждани́на · lm. гра́ждане', 'p', 'Ка́ждый {граждани́н} име́ет права́ и обя́занности.', 'Każdy obywatel ma prawa i obowiązki.');
+  W('равнопра́вие', 'с', 'równouprawnienie', 'D. равнопра́вия', 'p', '{Равнопра́вие} мужчи́н и же́нщин запи́сано в конститу́ции.', 'Równouprawnienie kobiet i mężczyzn jest zapisane w konstytucji.');
+  W('бе́дность', 'ж', 'bieda, ubóstwo', 'D. бе́дности', 'p', 'Мно́гие де́ти живу́т в {бе́дности}.', 'Wiele dzieci żyje w biedzie.');
+  W('безрабо́тица', 'ж', 'bezrobocie', 'D. безрабо́тицы', 'p', '{Безрабо́тица} снизи́лась.', 'Bezrobocie spadło.');
+  W('пе́нсия', 'ж', 'emerytura', 'D. пе́нсии · на пе́нсии – na emeryturze', 'f', 'Мой оте́ц уже́ на {пе́нсии}.', 'Mój ojciec jest już na emeryturze.');
+  W('иммигра́нт', 'ч', 'imigrant', 'D. иммигра́нта', 't', 'В го́роде мно́го {иммигра́нтов}.', 'W mieście jest wielu imigrantów.');
+  W('интегра́ция', 'ж', 'integracja', 'D. интегра́ции', 't', 'Язы́к – ключ к {интегра́ции}.', 'Język jest kluczem do integracji.');
+  W('волонтёр', 'ч', 'wolontariusz', 'D. волонтёра', 'p', 'Она́ рабо́тает {волонтёром} в прию́те.', 'Ona jest wolontariuszką w schronisku.');
+  W('нало́г', 'ч', 'podatek', 'D. нало́га', 'o', 'Мы пла́тим высо́кие {нало́ги}.', 'Płacimy wysokie podatki.');
+  W('справедли́вость', 'ж', 'sprawiedliwość', 'D. справедли́вости', 'p', 'Речь идёт о социа́льной {справедли́вости}.', 'Chodzi o sprawiedliwość społeczną.');
+
+  L('B1', 'b1_ekologiya', 'Środowisko');
+  W('окружа́ющая среда́', 'ф', 'środowisko (naturalne)', '', 'o', 'На́до защища́ть {окружа́ющую сре́ду}.', 'Trzeba chronić środowisko.');
+  W('измене́ние кли́мата', 'ф', 'zmiana klimatu', '', 'p', '{Измене́ние кли́мата} каса́ется всех.', 'Zmiana klimatu dotyczy wszystkich.');
+  W('загрязне́ние', 'с', 'zanieczyszczenie', 'D. загрязне́ния', 'p', '{Загрязне́ние} во́здуха опа́сно.', 'Zanieczyszczenie powietrza jest niebezpieczne.');
+  W('отхо́ды', 'мн', 'odpady', 'D. отхо́дов', 'o', 'Мы сорти́руем {отхо́ды}.', 'Segregujemy odpady.');
+  W('сортирова́ть', 'д', 'sortować, segregować', 'сорти́рую', 't', 'Мы {сорти́руем} бума́гу, стекло́ и пла́стик.', 'Segregujemy papier, szkło i plastik.');
+  W('эне́ргия', 'ж', 'energia', 'D. эне́ргии', 't', 'Мы эконо́мим {эне́ргию}.', 'Oszczędzamy energię.');
+  W('возобновля́емый', 'п', 'odnawialny', '', 'o', '{Возобновля́емая} эне́ргия – э́то бу́дущее.', 'Energia odnawialna to przyszłość.');
+  W('запове́дник', 'ч', 'rezerwat przyrody', 'D. запове́дника', 'o', 'В {запове́днике} нельзя́ охо́титься.', 'W rezerwacie nie wolno polować.');
+  W('за́суха', 'ж', 'susza', 'D. за́сухи', 'p', '{За́суха} уничто́жила урожа́й.', 'Susza zniszczyła plony.');
+  W('наводне́ние', 'с', 'powódź', 'D. наводне́ния', 'o', 'По́сле дожде́й начало́сь {наводне́ние}.', 'Po deszczach zaczęła się powódź.');
+  W('приро́да', 'ж', 'przyroda', 'D. приро́ды', 'p', 'Я люблю́ отдыха́ть на {приро́де}.', 'Lubię odpoczywać na łonie przyrody.');
+  W('тра́тить / потра́тить', 'д', 'wydawać; marnować / wydać', 'тра́чу, тра́тишь', 'p', 'Не {тра́ть} во́ду зря!', 'Nie marnuj wody!');
+
+  L('B1', 'b1_ucheba', 'Edukacja i studia');
+  W('университе́т', 'ч', 'uniwersytet', 'D. университе́та', 't', 'Он у́чится в Моско́вском {университе́те}.', 'On studiuje na Uniwersytecie Moskiewskim.');
+  W('студе́нт', 'ч', 'student', 'D. студе́нта · ż. студе́нтка', 't', 'Я {студе́нт} истори́ческого факульте́та.', 'Jestem studentem wydziału historii.');
+  W('предме́т', 'ч', 'przedmiot', 'D. предме́та', 'p', 'Мой люби́мый {предме́т} – исто́рия.', 'Mój ulubiony przedmiot to historia.');
+  W('ле́кция', 'ж', 'wykład', 'D. ле́кции', 'f', 'Сего́дня {ле́кции} не бу́дет.', 'Dziś nie będzie wykładu.');
+  W('стипе́ндия', 'ж', 'stypendium', 'D. стипе́ндии', 't', 'Она́ получа́ет {стипе́ндию}.', 'Ona dostaje stypendium.');
+  W('дипло́мная рабо́та', 'ф', 'praca dyplomowa', 'potocznie: дипло́м', 'p', 'Я пишу́ {дипло́мную рабо́ту}.', 'Piszę pracę dyplomową.');
+  W('сдава́ть / сдать (экза́мен)', 'д', 'zdawać / zdać (egzamin)', 'сдаю́ · сдам, сдашь', 'f', 'Я {сдал} экза́мен!', 'Zdałem egzamin!');
+  W('прова́ливаться / провали́ться', 'д', 'oblewać / oblać (egzamin)', 'прова́ливаюсь · провалю́сь', 'p', 'К сожале́нию, он {провали́лся} на экза́мене.', 'Niestety oblał egzamin.');
+  W('аттеста́т', 'ч', 'świadectwo (szkolne)', 'D. аттеста́та', 'p', 'По́сле шко́лы получа́ют {аттеста́т}.', 'Po szkole dostaje się świadectwo.');
+  W('ЕГЭ', 'ч', 'rosyjska matura (Jednolity Egzamin Państwowy)', 'czyt. [егэ́]', 'o', 'В ию́не все выпускники́ сдаю́т {ЕГЭ}.', 'W czerwcu wszyscy absolwenci zdają maturę.');
+  W('образова́ние', 'с', 'wykształcenie, edukacja', 'D. образова́ния', 'f', 'У неё вы́сшее {образова́ние}.', 'Ona ma wyższe wykształcenie.');
+  W('библиоте́ка', 'ж', 'biblioteka', 'D. библиоте́ки', 't', 'Я занима́юсь в {библиоте́ке}.', 'Uczę się w bibliotece.');
+
+  L('B1', 'b1_otnosheniya', 'Relacje');
+  W('отноше́ния', 'мн', 'relacje, stosunki; związek', 'D. отноше́ний', 'p', 'У них хоро́шие {отноше́ния}.', 'Mają dobre relacje.');
+  W('влюбля́ться / влюби́ться', 'д', 'zakochiwać się / zakochać się', 'влюблю́сь, влю́бишься', 'p', 'Он {влюби́лся} в неё.', 'Zakochał się w niej.');
+  W('жени́ться', 'д', 'żenić się (o mężczyźnie: на + Msc.)', 'женю́сь, же́нишься', 'p', 'Он {жени́лся} на мое́й подру́ге.', 'Ożenił się z moją przyjaciółką.');
+  W('выходи́ть / вы́йти за́муж', 'ф', 'wychodzić za mąż (o kobiecie: за + B.)', 'вы́йду за́муж', 'p', 'Она́ {вы́шла за́муж} за врача́.', 'Wyszła za mąż za lekarza.');
+  W('сва́дьба', 'ж', 'wesele, ślub', 'D. сва́дьбы', 'p', 'Нас пригласи́ли на {сва́дьбу}.', 'Zaprosili nas na wesele.');
+  W('расстава́ться / расста́ться', 'д', 'rozstawać się / rozstać się', 'расстаю́сь · расста́нусь', 'p', 'Они́ {расста́лись} по́сле десяти́ лет.', 'Rozstali się po dziesięciu latach.');
+  W('ссо́ра', 'ж', 'kłótnia', 'D. ссо́ры', 'o', 'У нас была́ ма́ленькая {ссо́ра}.', 'Mieliśmy małą kłótnię.');
+  W('мири́ться / помири́ться', 'д', 'godzić się / pogodzić się', 'мирю́сь, мири́шься', 'p', 'По́сле ссо́ры мы {помири́лись}.', 'Po kłótni się pogodziliśmy.');
+  W('доверя́ть / дове́рить', 'д', 'ufać (komuś) / powierzyć', 'доверя́ю', 'p', 'Я тебе́ {доверя́ю}.', 'Ufam ci.');
+  W('ревни́вый', 'п', 'zazdrosny (w miłości)', '', 'o', 'Он о́чень {ревни́вый}.', 'On jest bardzo zazdrosny.');
+  W('ро́дственники', 'мн', 'krewni', 'lp. ро́дственник', 'p', 'На Но́вый год мы навеща́ем {ро́дственников}.', 'Na Nowy Rok odwiedzamy krewnych.');
+  W('знако́мый', 'ч', 'znajomy', 'D. знако́мого (odmiana przymiotnikowa)', 'p', 'Мой {знако́мый} посове́товал э́ту кварти́ру.', 'Mój znajomy polecił to mieszkanie.');
+
+  L('B1', 'b1_zdorove', 'Zdrowie');
+  W('боле́знь', 'ж', 'choroba', 'D. боле́зни', 'p', 'Э́та {боле́знь} не опа́сна.', 'Ta choroba nie jest groźna.');
+  W('просту́да', 'ж', 'przeziębienie', 'D. просту́ды', 'p', 'У меня́ лёгкая {просту́да}.', 'Mam lekkie przeziębienie.');
+  W('ка́шель', 'ч', 'kaszel', 'D. ка́шля', 'p', '{Ка́шель} не прохо́дит.', 'Kaszel nie mija.');
+  W('тра́вма', 'ж', 'uraz, kontuzja', 'D. тра́вмы', 't', '{Тра́вма} не серьёзная.', 'Uraz nie jest poważny.');
+  W('выпи́сывать / вы́писать', 'д', 'wypisywać / wypisać (receptę)', 'выпи́сываю · вы́пишу', 'p', 'Врач {вы́писал} мне табле́тки.', 'Lekarz przepisał mi tabletki.');
+  W('страхо́вка', 'ж', 'ubezpieczenie', 'D. страхо́вки', 'o', '{Страхо́вка} покрыва́ет лече́ние.', 'Ubezpieczenie pokrywa leczenie.');
+  W('лече́ние', 'с', 'leczenie', 'D. лече́ния', 'p', '{Лече́ние} продли́тся три неде́ли.', 'Leczenie potrwa trzy tygodnie.');
+  W('поликли́ника', 'ж', 'przychodnia', 'D. поликли́ники', 'p', 'Я записа́лся к врачу́ в {поликли́нику}.', 'Zapisałem się do lekarza w przychodni.');
+  W('отдыха́ть / отдохну́ть', 'д', 'odpoczywać / odpocząć', 'отдыха́ю · отдохну́', 'p', 'В о́тпуске я {отдыха́ю}.', 'Na urlopie odpoczywam.');
+  W('пита́ние', 'с', 'odżywianie', 'D. пита́ния', 'o', 'Здоро́вое {пита́ние} о́чень ва́жно.', 'Zdrowe odżywianie jest bardzo ważne.');
+  W('боль', 'ж', 'ból', 'D. бо́ли', 't', 'У меня́ си́льная {боль}.', 'Mam silny ból.');
+  W('приви́вка', 'ж', 'szczepienie', 'D. приви́вки', 'o', 'Ты сде́лал {приви́вку} от гри́ппа?', 'Zaszczepiłeś się na grypę?');
+
+  L('B1', 'b1_mnenie', 'Wyrażanie opinii');
+  W('по-мо́ему', 'пр', 'moim zdaniem', '', 'p', '{По-мо́ему}, э́то сли́шком до́рого.', 'Moim zdaniem to za drogie.');
+  W('я счита́ю, что …', 'ф', 'uważam, że…', '', 'p', '{Я счита́ю, что} ты прав.', 'Uważam, że masz rację.');
+  W('соглаша́ться / согласи́ться', 'д', 'zgadzać się / zgodzić się', 'соглаша́юсь · соглашу́сь', 'p', 'Я с тобо́й {согла́сен}.', 'Zgadzam się z tobą.');
+  W('возража́ть / возрази́ть', 'д', 'sprzeciwiać się / zaprotestować', 'возража́ю · возражу́', 'o', 'Позво́льте {возрази́ть}.', 'Pozwolę sobie się nie zgodzić.');
+  W('быть пра́вым', 'ф', 'mieć rację', 'ты прав, ты права́', 'p', 'Ты {прав}.', 'Masz rację.');
+  W('преиму́щество', 'с', 'zaleta, przewaga', 'D. преиму́щества', 'o', 'Большо́е {преиму́щество} – цена́.', 'Dużą zaletą jest cena.');
+  W('недоста́ток', 'ч', 'wada; niedobór', 'D. недоста́тка', 'p', '{Недоста́ток} в том, что э́то до́лго.', 'Wadą jest to, że to długo trwa.');
+  W('убежда́ть / убеди́ть', 'д', 'przekonywać / przekonać', 'убежда́ю · убеди́шь', 'p', 'Э́тот аргуме́нт меня́ {убеди́л}.', 'Ten argument mnie przekonał.');
+  W('с одно́й стороны́ … с друго́й стороны́', 'ф', 'z jednej strony… z drugiej strony', '', 'p', '{С одно́й стороны́}, э́то удо́бно, с друго́й – до́рого.', 'Z jednej strony to wygodne, z drugiej drogie.');
+  W('тем не ме́нее', 'пр', 'niemniej jednak', '', 'o', 'Шёл дождь, {тем не ме́нее} мы пошли́ гуля́ть.', 'Padało, niemniej poszliśmy na spacer.');
+  W('кро́ме того́', 'пр', 'poza tym', '', 'p', 'Э́то дёшево и, {кро́ме того́}, поле́зно.', 'To tanie, a poza tym zdrowe.');
+  W('поэ́тому', 'пр', 'dlatego', '', 'o', 'Я бо́лен, {поэ́тому} остаю́сь до́ма.', 'Jestem chory, dlatego zostaję w domu.');
+
+  /* ===================== B2 ===================== */
+  L('B2', 'b2_ekonomika', 'Gospodarka');
+  W('эконо́мика', 'ж', 'gospodarka, ekonomia', 'D. эконо́мики', 't', '{Эконо́мика} растёт ме́дленно.', 'Gospodarka rośnie powoli.');
+  W('предприя́тие', 'с', 'przedsiębiorstwo', 'D. предприя́тия', 'p', 'На {предприя́тии} рабо́тают пятьсо́т челове́к.', 'W przedsiębiorstwie pracuje pięćset osób.');
+  W('оборо́т', 'ч', 'obrót', 'D. оборо́та', 'p', '{Оборо́т} вы́рос на де́сять проце́нтов.', 'Obroty wzrosły o dziesięć procent.');
+  W('при́быль', 'ж', 'zysk', 'D. при́были', 'p', 'Фи́рма не прино́сит {при́были}.', 'Firma nie przynosi zysku.');
+  W('инфля́ция', 'ж', 'inflacja', 'D. инфля́ции', 't', '{Инфля́ция} о́чень высо́кая.', 'Inflacja jest bardzo wysoka.');
+  W('ры́нок труда́', 'ф', 'rynek pracy', '', 'p', 'На {ры́нке труда́} не хвата́ет специали́стов.', 'Na rynku pracy brakuje specjalistów.');
+  W('специали́ст', 'ч', 'specjalista', 'D. специали́ста', 't', 'Он о́пытный {специали́ст}.', 'On jest doświadczonym specjalistą.');
+  W('инвести́ровать', 'д', 'inwestować', 'инвести́рую', 't', 'Прави́тельство {инвести́рует} в образова́ние.', 'Rząd inwestuje w edukację.');
+  W('конкуре́нция', 'ж', 'konkurencja', 'D. конкуре́нции', 't', '{Конкуре́нция} о́чень жёсткая.', 'Konkurencja jest bardzo ostra.');
+  W('банкро́тство', 'с', 'bankructwo, upadłość', 'D. банкро́тства', 'p', 'Компа́ния объяви́ла о {банкро́тстве}.', 'Firma ogłosiła upadłość.');
+  W('потреби́тель', 'ч', 'konsument', 'D. потреби́теля', 'o', '{Потреби́тели} покупа́ют ме́ньше.', 'Konsumenci kupują mniej.');
+  W('спрос', 'ч', 'popyt', 'D. спро́са · предложе́ние – podaż', 'o', '{Спрос} на электромоби́ли растёт.', 'Popyt na samochody elektryczne rośnie.');
+
+  L('B2', 'b2_politika', 'Polityka');
+  W('прави́тельство', 'с', 'rząd', 'D. прави́тельства', 'o', '{Прави́тельство} гото́вит рефо́рму.', 'Rząd przygotowuje reformę.');
+  W('парла́мент', 'ч', 'parlament', 'D. парла́мента', 't', '{Парла́мент} при́нял зако́н.', 'Parlament przyjął ustawę.');
+  W('президе́нт', 'ч', 'prezydent', 'D. президе́нта', 't', '{Президе́нт} вы́ступил с ре́чью.', 'Prezydent wygłosił przemówienie.');
+  W('вы́боры', 'мн', 'wybory', 'D. вы́боров', 'p', '{Вы́боры} пройду́т в сентябре́.', 'Wybory odbędą się we wrześniu.');
+  W('голосова́ть / проголосова́ть', 'д', 'głosować / zagłosować', 'голосу́ю', 'p', 'За кого́ ты {голосова́л}?', 'Na kogo głosowałeś?');
+  W('па́ртия', 'ж', 'partia', 'D. па́ртии', 't', 'Кака́я {па́ртия} победи́ла?', 'Która partia wygrała?');
+  W('оппози́ция', 'ж', 'opozycja', 'D. оппози́ции', 't', '{Оппози́ция} крити́кует план.', 'Opozycja krytykuje plan.');
+  W('зако́н', 'ч', 'ustawa, prawo', 'D. зако́на', 'f', 'Но́вый {зако́н} вступа́ет в си́лу в январе́.', 'Nowa ustawa wchodzi w życie w styczniu.');
+  W('конститу́ция', 'ж', 'konstytucja', 'D. конститу́ции', 't', '{Конститу́ция} гаранти́рует свобо́ду сло́ва.', 'Konstytucja gwarantuje wolność słowa.');
+  W('права́ челове́ка', 'ф', 'prawa człowieka', '', 'p', 'Организа́ция защища́ет {права́ челове́ка}.', 'Organizacja broni praw człowieka.');
+  W('депута́т', 'ч', 'deputowany, poseł', 'D. депута́та', 'p', '{Депута́т} проголосова́л про́тив.', 'Poseł głosował przeciw.');
+  W('демокра́тия', 'ж', 'demokracja', 'D. демокра́тии', 't', '{Демокра́тии} нужны́ акти́вные гра́ждане.', 'Demokracja potrzebuje aktywnych obywateli.');
+
+  L('B2', 'b2_nauka', 'Nauka i badania');
+  W('нау́ка', 'ж', 'nauka (dziedzina wiedzy)', 'D. нау́ки', 'f', '{Нау́ка} де́лает больши́е успе́хи.', 'Nauka robi wielkie postępy.');
+  W('иссле́дование', 'с', 'badanie (naukowe)', 'D. иссле́дования', 'o', '{Иссле́дование} пока́зывает интере́сные результа́ты.', 'Badanie pokazuje ciekawe wyniki.');
+  W('иссле́довать', 'д', 'badać', 'иссле́дую', 'o', 'Учёные {иссле́дуют} поведе́ние подро́стков.', 'Naukowcy badają zachowanie nastolatków.');
+  W('результа́т', 'ч', 'wynik, rezultat', 'D. результа́та', 't', '{Результа́т} удиви́тельный.', 'Wynik jest zaskakujący.');
+  W('учёный', 'ч', 'naukowiec, uczony', 'D. учёного (odmiana przymiotnikowa)', 'p', 'Ломоно́сов – вели́кий ру́сский {учёный}.', 'Łomonosow to wielki rosyjski uczony.');
+  W('доказа́тельство', 'с', 'dowód', 'D. доказа́тельства', 'p', 'Нет никаки́х {доказа́тельств}.', 'Nie ma żadnych dowodów.');
+  W('изобрете́ние', 'с', 'wynalazek', 'D. изобрете́ния', 'p', 'Ра́дио – вели́кое {изобрете́ние}.', 'Radio to wielki wynalazek.');
+  W('открыва́ть / откры́ть', 'д', 'odkrywać / odkryć; otwierać / otworzyć', 'открыва́ю · откро́ю', 'p', 'Менделе́ев {откры́л} периоди́ческий зако́н.', 'Mendelejew odkrył prawo okresowości.');
+  W('гипо́теза', 'ж', 'hipoteza', 'D. гипо́тезы', 't', 'Его́ {гипо́теза} спо́рная.', 'Jego hipoteza jest kontrowersyjna.');
+  W('доказа́ть', 'д', 'udowodnić', 'докажу́, дока́жешь · ndk. дока́зывать', 'p', 'Удало́сь {доказа́ть} э́тот эффе́кт.', 'Udało się udowodnić ten efekt.');
+  W('усло́вие', 'с', 'warunek', 'D. усло́вия', 'p', 'Хоро́шие да́нные – {усло́вие} ана́лиза.', 'Dobre dane są warunkiem analizy.');
+  W('да́нные', 'мн', 'dane', 'D. да́нных', 'p', 'Нам нужны́ надёжные {да́нные}.', 'Potrzebujemy wiarygodnych danych.');
+
+  L('B2', 'b2_kultura', 'Kultura i sztuka');
+  W('вы́ставка', 'ж', 'wystawa', 'D. вы́ставки', 'p', '{Вы́ставка} откры́та до ма́я.', 'Wystawa jest otwarta do maja.');
+  W('карти́на', 'ж', 'obraz (malowany)', 'D. карти́ны', 'p', 'Э́ту {карти́ну} написа́л Ре́пин.', 'Ten obraz namalował Riepin.');
+  W('писа́тель', 'ч', 'pisarz', 'D. писа́теля · ż. писа́тельница', 'p', 'Толсто́й – знамени́тый {писа́тель}.', 'Tołstoj to sławny pisarz.');
+  W('спекта́кль', 'ч', 'przedstawienie, spektakl', 'D. спекта́кля', 'p', 'Все биле́ты на {спекта́кль} про́даны.', 'Wszystkie bilety na spektakl są wyprzedane.');
+  W('сце́на', 'ж', 'scena', 'D. сце́ны', 't', 'Актёр стои́т на {сце́не}.', 'Aktor stoi na scenie.');
+  W('па́мятник', 'ч', 'pomnik', 'D. па́мятника', 'f', '{Па́мятник} Пу́шкину стои́т в це́нтре.', 'Pomnik Puszkina stoi w centrum.');
+  W('рома́н', 'ч', 'powieść; romans', 'D. рома́на', 'f', '«Война́ и мир» – о́чень дли́нный {рома́н}.', '„Wojna i pokój” to bardzo długa powieść.');
+  W('произведе́ние', 'с', 'dzieło, utwór', 'D. произведе́ния', 'p', 'Э́то его́ са́мое изве́стное {произведе́ние}.', 'To jego najbardziej znane dzieło.');
+  W('изобража́ть / изобрази́ть', 'д', 'przedstawiać / przedstawić', 'изобража́ю · изображу́', 'p', 'Карти́на {изобража́ет} би́тву.', 'Obraz przedstawia bitwę.');
+  W('кри́тика', 'ж', 'krytyka', 'D. кри́тики', 't', 'Фильм получи́л хоро́шую {кри́тику}.', 'Film dostał dobre recenzje.');
+  W('насле́дие', 'с', 'dziedzictwo', 'D. насле́дия', 'p', 'Культу́рное {насле́дие} на́до бере́чь.', 'Dziedzictwo kulturowe trzeba chronić.');
+  W('впечатля́ющий', 'п', 'imponujący', '', 'o', 'Собо́р {впечатля́ющий}.', 'Sobór jest imponujący.');
+
+  L('B2', 'b2_svyazki', 'Spójniki i łączniki');
+  W('хотя́', 'з', 'chociaż', '', 'p', 'Он пришёл, {хотя́} был бо́лен.', 'Przyszedł, chociaż był chory.');
+  W('в то вре́мя как', 'з', 'podczas gdy', 'też: пока́', 'p', '{В то вре́мя как} я гото́влю, он чита́ет.', 'Podczas gdy gotuję, on czyta.');
+  W('по́сле того́ как', 'з', 'po tym, jak', '', 'p', '{По́сле того́ как} мы пообе́дали, мы пошли́ гуля́ть.', 'Po tym, jak zjedliśmy obiad, poszliśmy na spacer.');
+  W('пре́жде чем', 'з', 'zanim', '', 'o', 'Позвони́, {пре́жде чем} прийти́.', 'Zadzwoń, zanim przyjdziesz.');
+  W('что́бы', 'з', 'żeby, aby', '+ czas przeszły lub bezokolicznik', 'p', 'Я говорю́ ме́дленно, {что́бы} ты по́нял.', 'Mówię powoli, żebyś zrozumiał.');
+  W('так что', 'з', 'tak że, więc', '', 'p', 'Шёл си́льный дождь, {так что} мы оста́лись до́ма.', 'Mocno padało, więc zostaliśmy w domu.');
+  W('в слу́чае е́сли', 'з', 'w razie gdyby', '', 'p', '{В слу́чае е́сли} ну́жна по́мощь, звони́.', 'Gdybyś potrzebował pomocy, dzwoń.');
+  W('чем … тем', 'з', 'im… tym', '', 'p', '{Чем} бо́льше я учу́сь, тем лу́чше понима́ю.', 'Im więcej się uczę, tym lepiej rozumiem.');
+  W('как …, так и', 'з', 'zarówno… jak i', '', 'p', 'Она́ говори́т {как} по-ру́сски, так и по-по́льски.', 'Ona mówi zarówno po rosyjsku, jak i po polsku.');
+  W('ни … ни', 'з', 'ani… ani', '', 't', 'У меня́ {ни} вре́мени, ни жела́ния.', 'Nie mam ani czasu, ani ochoty.');
+  W('вме́сто э́того', 'пр', 'zamiast tego', '', 'p', 'Он не позвони́л, {вме́сто э́того} написа́л письмо́.', 'Nie zadzwonił, zamiast tego napisał list.');
+  W('сле́довательно', 'пр', 'w konsekwencji, zatem', '', 'o', 'Це́ны расту́т, {сле́довательно}, спрос па́дает.', 'Ceny rosną, zatem popyt spada.');
+
+  L('B2', 'b2_pravo', 'Prawo i administracja');
+  W('суд', 'ч', 'sąd', 'D. суда́', 'p', 'Де́ло пойдёт в {суд}.', 'Sprawa trafi do sądu.');
+  W('судья́', 'ч', 'sędzia', 'D. судьи́ (odmiana jak rz. żeńskie)', 'p', '{Судья́} огласи́л пригово́р.', 'Sędzia ogłosił wyrok.');
+  W('пригово́р', 'ч', 'wyrok (karny)', 'D. пригово́ра', 'o', '{Пригово́р} вступи́л в зако́нную си́лу.', 'Wyrok uprawomocnił się.');
+  W('адвока́т', 'ч', 'adwokat', 'D. адвока́та', 't', 'Снача́ла я поговорю́ со свои́м {адвока́том}.', 'Najpierw porozmawiam z moim adwokatem.');
+  W('догово́р', 'ч', 'umowa', 'D. догово́ра', 'p', 'Внима́тельно прочита́йте {догово́р}.', 'Proszę uważnie przeczytać umowę.');
+  W('подпи́сывать / подписа́ть', 'д', 'podpisywać / podpisać', 'подпи́сываю · подпишу́', 'p', '{Подпиши́те} здесь, пожа́луйста.', 'Proszę tu podpisać.');
+  W('учрежде́ние', 'с', 'urząd, instytucja', 'D. учрежде́ния', 'o', 'Э́то госуда́рственное {учрежде́ние}.', 'To instytucja państwowa.');
+  W('заявле́ние', 'с', 'wniosek, podanie; oświadczenie', 'D. заявле́ния', 'o', 'Я пишу́ {заявле́ние} на о́тпуск.', 'Piszę wniosek o urlop.');
+  W('разреше́ние', 'с', 'zezwolenie', 'D. разреше́ния', 'p', 'Для э́того ну́жно {разреше́ние}.', 'Do tego potrzebne jest zezwolenie.');
+  W('запреща́ть / запрети́ть', 'д', 'zabraniać / zabronić', 'запреща́ю · запрещу́', 'p', 'Здесь {запрещено́} кури́ть.', 'Tu nie wolno palić.');
+  W('штраф', 'ч', 'mandat, grzywna', 'D. штра́фа', 'p', 'Ему́ пришло́сь заплати́ть {штраф}.', 'Musiał zapłacić mandat.');
+  W('свиде́тель', 'ч', 'świadek', 'D. свиде́теля', 'p', '{Свиде́тель} дал показа́ния в суде́.', 'Świadek zeznawał w sądzie.');
+
+  L('B2', 'b2_abstrakt', 'Pojęcia abstrakcyjne');
+  W('разви́тие', 'с', 'rozwój', 'D. разви́тия', 'p', '{Разви́тие} те́хники идёт о́чень бы́стро.', 'Rozwój techniki postępuje bardzo szybko.');
+  W('причи́на', 'ж', 'przyczyna', 'D. причи́ны', 'p', 'Кака́я {причи́на} пробле́мы?', 'Jaka jest przyczyna problemu?');
+  W('после́дствие', 'с', 'skutek, następstwo', 'D. после́дствия', 'p', 'У войны́ бы́ли стра́шные {после́дствия}.', 'Wojna miała straszne skutki.');
+  W('отве́тственность', 'ж', 'odpowiedzialność', 'D. отве́тственности', 'p', 'Мы несём {отве́тственность} за дете́й.', 'Ponosimy odpowiedzialność za dzieci.');
+  W('свобо́да', 'ж', 'wolność', 'D. свобо́ды', 'p', '{Свобо́да} – вели́кая це́нность.', 'Wolność to wielka wartość.');
+  W('взаимосвя́зь', 'ж', 'wzajemny związek, zależność', 'D. взаимосвя́зи', 'p', 'Ме́жду э́тими явле́ниями есть {взаимосвя́зь}.', 'Między tymi zjawiskami istnieje wzajemny związek.');
+  W('вы́зов', 'ч', 'wyzwanie', 'D. вы́зова', 'p', 'Э́то большо́й {вы́зов}.', 'To wielkie wyzwanie.');
+  W('реше́ние', 'с', 'rozwiązanie; decyzja', 'D. реше́ния', 'p', 'Мы и́щем {реше́ние}.', 'Szukamy rozwiązania.');
+  W('влия́ние', 'с', 'wpływ', 'D. влия́ния', 'p', 'СМИ облада́ют больши́м {влия́нием}.', 'Media mają duży wpływ.');
+  W('наме́рение', 'с', 'zamiar', 'D. наме́рения', 'p', 'Э́то не бы́ло мои́м {наме́рением}.', 'To nie był mój zamiar.');
+  W('привы́чка', 'ж', 'nawyk, przyzwyczajenie', 'D. привы́чки', 'p', 'Э́то плоха́я {привы́чка}.', 'To zły nawyk.');
+  W('о́пыт', 'ч', 'doświadczenie', 'D. о́пыта', 'p', 'У неё большо́й {о́пыт} рабо́ты.', 'Ona ma duże doświadczenie zawodowe.');
+
+  /* ===================== C1 ===================== */
+  L('C1', 'c1_idiomy', 'Idiomy (1)');
+  W('держа́ть кулачки́', 'ф', 'trzymać kciuki', 'Держу́ за тебя́ кулачки́!', 'o', 'Я {держу́} за тебя́ {кулачки́}!', 'Trzymam za ciebie kciuki!');
+  W('ни пу́ха ни пера́', 'ф', 'połamania nóg (powodzenia)', 'odp.: К чёрту!', 'o', 'За́втра экза́мен? {Ни пу́ха ни пера́}!', 'Jutro egzamin? Połamania nóg!');
+  W('ве́шать лапшу́ на у́ши', 'ф', 'wciskać kit, bujać', '', 'o', 'Не {ве́шай} мне {лапшу́ на у́ши}!', 'Nie wciskaj mi kitu!');
+  W('бить баклу́ши', 'ф', 'obijać się, próżnować', '', 'o', 'Хва́тит {бить баклу́ши}, пора́ рабо́тать!', 'Dość obijania się, czas do pracy!');
+  W('как с гу́ся вода́', 'ф', 'spływa jak woda po kaczce', '', 'p', 'Ему́ всё {как с гу́ся вода́}.', 'Wszystko spływa po nim jak woda po kaczce.');
+  W('водо́й не разольёшь', 'ф', 'nierozłączni', '', 'o', 'Они́ дру́жат – {водо́й не разольёшь}.', 'Przyjaźnią się – są nierozłączni.');
+  W('медве́жья услу́га', 'ф', 'niedźwiedzia przysługa', '', 'p', 'Ты оказа́л мне {медве́жью услу́гу}.', 'Wyświadczyłeś mi niedźwiedzią przysługę.');
+  W('покупа́ть кота́ в мешке́', 'ф', 'kupować kota w worku', '', 't', 'Я не хочу́ {покупа́ть кота́ в мешке́}.', 'Nie chcę kupować kota w worku.');
+  W('ходи́ть вокру́г да о́коло', 'ф', 'owijać w bawełnę', '', 'o', 'Хва́тит {ходи́ть вокру́г да о́коло}!', 'Przestań owijać w bawełnę!');
+  W('откла́дывать в до́лгий я́щик', 'ф', 'odkładać na święty nigdy', '', 'p', 'Не на́до {откла́дывать} э́то {в до́лгий я́щик}.', 'Nie trzeba tego odkładać na później.');
+  W('когда́ рак на горе́ сви́стнет', 'ф', 'jak mi kaktus wyrośnie (nigdy)', '', 'o', 'Он отда́ст долг, {когда́ рак на горе́ сви́стнет}.', 'Odda dług, jak mi kaktus wyrośnie.');
+  W('у чёрта на кули́чках', 'ф', 'na końcu świata, gdzie diabeł mówi dobranoc', '', 'o', 'Он живёт {у чёрта на кули́чках}.', 'On mieszka tam, gdzie diabeł mówi dobranoc.');
+
+  L('C1', 'c1_oficialny', 'Język urzędowy');
+  W('регистра́ция', 'ж', 'meldunek, rejestracja', 'D. регистра́ции', 't', '{Регистра́ция} по ме́сту жи́тельства обяза́тельна.', 'Meldunek w miejscu zamieszkania jest obowiązkowy.');
+  W('спра́вка', 'ж', 'zaświadczenie', 'D. спра́вки', 'o', 'Мне нужна́ {спра́вка} с ме́ста рабо́ты.', 'Potrzebuję zaświadczenia z pracy.');
+  W('срок', 'ч', 'termin; okres', 'D. сро́ка', 'p', '{Срок} истека́ет три́дцать пе́рвого ма́я.', 'Termin upływa trzydziestego pierwszego maja.');
+  W('подава́ть / пода́ть заявле́ние', 'ф', 'składać / złożyć wniosek', '', 'p', 'Я хочу́ {пода́ть заявле́ние} на но́вый па́спорт.', 'Chcę złożyć wniosek o nowy paszport.');
+  W('дове́ренность', 'ж', 'pełnomocnictwo', 'D. дове́ренности', 'p', 'Без {дове́ренности} нельзя́.', 'Bez pełnomocnictwa nie można.');
+  W('обжа́ловать', 'д', 'zaskarżyć, odwołać się od', 'обжа́лую', 'o', 'Э́то реше́ние мо́жно {обжа́ловать}.', 'Od tej decyzji można się odwołać.');
+  W('отве́тственный', 'п', 'odpowiedzialny; właściwy (za coś)', '', 'p', 'Кто {отве́тственный} за э́то?', 'Kto jest za to odpowiedzialny?');
+  W('докуме́нты', 'мн', 'dokumenty', 'D. докуме́нтов', 't', 'Принеси́те, пожа́луйста, все {докуме́нты}.', 'Proszę przynieść wszystkie dokumenty.');
+  W('заполня́ть / запо́лнить', 'д', 'wypełniać / wypełnić', 'заполня́ю · запо́лню', 'p', '{Запо́лните} анке́ту, пожа́луйста.', 'Proszę wypełnić ankietę.');
+  W('согла́сно', 'з', 'zgodnie z (+ celownik)', '', 'p', '{Согла́сно} пу́нкту пя́тому, э́то запрещено́.', 'Zgodnie z punktem piątym jest to zabronione.');
+  W('относи́тельно', 'з', 'odnośnie do (+ dopełniacz)', '', 'p', '{Относи́тельно} ва́шего запро́са сообща́ем …', 'Odnośnie do pana zapytania informujemy…');
+  W('в связи́ с', 'з', 'w związku z (+ narzędnik)', '', 'p', '{В связи́ с} ремо́нтом о́фис закры́т.', 'W związku z remontem biuro jest zamknięte.');
+
+  L('C1', 'c1_glagoly', 'Czasowniki zaawansowane');
+  W('влия́ть / повлия́ть', 'д', 'wpływać / wpłynąć (на + B.)', 'влия́ю', 'p', 'Рекла́ма {влия́ет} на на́ше поведе́ние.', 'Reklama wpływa na nasze zachowanie.');
+  W('учи́тывать / уче́сть', 'д', 'uwzględniać / uwzględnić', 'учи́тываю · учту́', 'o', 'Ну́жно {учи́тывать} все фа́кторы.', 'Trzeba uwzględniać wszystkie czynniki.');
+  W('отка́зываться / отказа́ться', 'д', 'rezygnować / zrezygnować (от + D.); odmawiać', 'отка́зываюсь · откажу́сь', 'p', 'Я {отказа́лся} от са́хара.', 'Zrezygnowałem z cukru.');
+  W('избега́ть / избежа́ть', 'д', 'unikać / uniknąć (+ D.)', 'избега́ю · избегу́', 'p', 'Мы должны́ {избега́ть} оши́бок.', 'Musimy unikać błędów.');
+  W('тре́бовать / потре́бовать', 'д', 'wymagać, żądać / zażądać (+ D.)', 'тре́бую', 'p', 'Э́та зада́ча {тре́бует} терпе́ния.', 'To zadanie wymaga cierpliwości.');
+  W('обеспе́чивать / обеспе́чить', 'д', 'zapewniać / zapewnić', 'обеспе́чиваю · обеспе́чу', 'p', 'Ну́жно {обеспе́чить} безопа́сность.', 'Trzeba zapewnić bezpieczeństwo.');
+  W('разбира́ться / разобра́ться', 'д', 'znać się na czymś; rozeznać się (в + Msc.)', 'разбира́юсь · разберу́сь', 'o', 'Он хорошо́ {разбира́ется} в поли́тике.', 'On dobrze zna się na polityce.');
+  W('подчёркивать / подчеркну́ть', 'д', 'podkreślać / podkreślić', 'подчёркиваю · подчеркну́', 'p', 'Хочу́ {подчеркну́ть} оди́н моме́нт.', 'Chcę podkreślić jedną kwestię.');
+  W('справля́ться / спра́виться', 'д', 'radzić sobie / poradzić sobie (с + N.)', 'справля́юсь · спра́влюсь', 'o', 'Мы {спра́вились} с кри́зисом.', 'Poradziliśmy sobie z kryzysem.');
+  W('спосо́бствовать', 'д', 'sprzyjać, przyczyniać się (+ C.)', 'спосо́бствую', 'o', 'Спорт {спосо́бствует} здоро́вью.', 'Sport sprzyja zdrowiu.');
+  W('отклоня́ть / отклони́ть', 'д', 'odrzucać / odrzucić (wniosek, propozycję)', 'отклоня́ю · отклоню́', 'p', 'Он {отклони́л} предложе́ние.', 'Odrzucił propozycję.');
+  W('предполага́ть / предположи́ть', 'д', 'przypuszczać, zakładać / przypuścić', 'предполага́ю · предположу́', 'p', '{Предполага́ю}, что он опозда́ет.', 'Przypuszczam, że się spóźni.');
+
+  L('C1', 'c1_prilagatelnye', 'Przymiotniki zaawansowane');
+  W('спо́рный', 'п', 'sporny, kontrowersyjny', '', 'p', 'Э́то {спо́рный} вопро́с.', 'To kwestia sporna.');
+  W('поня́тный', 'п', 'zrozumiały', '', 'p', 'Ва́ше реше́ние {поня́тно}.', 'Pana decyzja jest zrozumiała.');
+  W('значи́тельный', 'п', 'znaczny', '', 'p', 'Расхо́ды {значи́тельно} вы́росли.', 'Wydatki znacznie wzrosły.');
+  W('вре́менный', 'п', 'tymczasowy', '', 'p', 'Э́то то́лько {вре́менное} реше́ние.', 'To tylko tymczasowe rozwiązanie.');
+  W('сомни́тельный', 'п', 'wątpliwy', '', 'p', 'Успе́х {сомни́телен}.', 'Sukces jest wątpliwy.');
+  W('тре́бовательный', 'п', 'wymagający', '', 'p', 'У нас {тре́бовательный} преподава́тель.', 'Mamy wymagającego wykładowcę.');
+  W('разнообра́зный', 'п', 'różnorodny', '', 'p', 'Причи́ны {разнообра́зны}.', 'Przyczyny są różnorodne.');
+  W('трево́жный', 'п', 'niepokojący, alarmujący', '', 'o', 'Э́то {трево́жная} тенде́нция.', 'To niepokojąca tendencja.');
+  W('неизбе́жный', 'п', 'nieunikniony', '', 'p', 'Конфли́кт был {неизбе́жен}.', 'Konflikt był nieunikniony.');
+  W('очеви́дный', 'п', 'oczywisty', '', 'p', 'Э́то же {очеви́дно}!', 'To przecież oczywiste!');
+  W('реша́ющий', 'п', 'rozstrzygający, decydujący', '', 'p', 'Цена́ сыгра́ла {реша́ющую} роль.', 'Cena odegrała decydującą rolę.');
+  W('усто́йчивый', 'п', 'trwały, stabilny; zrównoważony', '', 'p', 'Мы стреми́мся к {усто́йчивому} разви́тию.', 'Dążymy do zrównoważonego rozwoju.');
+
+  L('C1', 'c1_sushch', 'Rzeczowniki abstrakcyjne');
+  W('возде́йствие', 'с', 'oddziaływanie, wpływ', 'D. возде́йствия', 'o', '{Возде́йствие} кри́зиса ощуща́ется везде́.', 'Oddziaływanie kryzysu jest odczuwalne wszędzie.');
+  W('ме́ра', 'ж', 'środek, działanie; miara', 'D. ме́ры', 'p', 'Прави́тельство принима́ет но́вые {ме́ры}.', 'Rząd podejmuje nowe działania.');
+  W('подхо́д', 'ч', 'podejście', 'D. подхо́да', 'p', 'Э́то интере́сный {подхо́д}.', 'To ciekawe podejście.');
+  W('предусмотри́тельность', 'ж', 'przezorność', 'D. предусмотри́тельности', 'o', 'Его́ {предусмотри́тельность} нас спасла́.', 'Jego przezorność nas uratowała.');
+  W('восприя́тие', 'с', 'postrzeganie, odbiór', 'D. восприя́тия', 'o', 'Обще́ственное {восприя́тие} измени́лось.', 'Społeczne postrzeganie się zmieniło.');
+  W('сопротивле́ние', 'с', 'opór', 'D. сопротивле́ния', 'p', 'План встре́тил {сопротивле́ние}.', 'Plan napotkał opór.');
+  W('гото́вность', 'ж', 'gotowość', 'D. гото́вности', 'p', 'Не хвата́ет {гото́вности} к компроми́ссу.', 'Brakuje gotowości do kompromisu.');
+  W('осно́ва', 'ж', 'podstawa', 'D. осно́вы', 'p', 'Дове́рие – {осно́ва} любы́х отноше́ний.', 'Zaufanie jest podstawą każdej relacji.');
+  W('неотъе́млемая часть', 'ф', 'nieodłączna część', '', 'o', 'Спорт – {неотъе́млемая часть} мое́й жи́зни.', 'Sport to nieodłączna część mojego życia.');
+  W('обстоя́тельство', 'с', 'okoliczność', 'D. обстоя́тельства', 'o', 'При таки́х {обстоя́тельствах} ничего́ не поде́лаешь.', 'W takich okolicznościach nic się nie da zrobić.');
+  W('про́сьба', 'ж', 'prośba', 'D. про́сьбы', 'p', 'У меня́ к вам {про́сьба}.', 'Mam do pana prośbę.');
+  W('уве́ренность', 'ж', 'pewność; ufność', 'D. уве́ренности', 'p', 'Мы смо́трим в бу́дущее с {уве́ренностью}.', 'Patrzymy w przyszłość z ufnością.');
+
+  L('C1', 'c1_istoriya', 'Historia Rosji');
+  W('Ки́евская Русь', 'ф', 'Ruś Kijowska', '', 'p', '{Ки́евская Русь} при́няла христиа́нство в 988 году́.', 'Ruś Kijowska przyjęła chrześcijaństwo w 988 roku.');
+  W('Сму́тное вре́мя', 'ф', 'Wielka Smuta (1598–1613)', 'potocznie: Сму́та', 'o', 'В {Сму́тное вре́мя} поля́ки заня́ли Москву́.', 'W czasie Wielkiej Smuty Polacy zajęli Moskwę.');
+  W('крепостно́е пра́во', 'ф', 'pańszczyzna, poddaństwo chłopów', 'zniesione w 1861 r.', 'o', '{Крепостно́е пра́во} отмени́ли в 1861 году́.', 'Pańszczyznę zniesiono w 1861 roku.');
+  W('импе́рия', 'ж', 'imperium, cesarstwo', 'D. импе́рии', 't', 'Пётр I провозгласи́л Росси́ю {импе́рией}.', 'Piotr I proklamował Rosję cesarstwem.');
+  W('восста́ние', 'с', 'powstanie', 'D. восста́ния', 'p', 'Ноя́брьское {восста́ние} начало́сь в 1830 году́.', 'Powstanie listopadowe wybuchło w 1830 roku.');
+  W('револю́ция', 'ж', 'rewolucja', 'D. револю́ции', 't', 'В 1917 году́ произошли́ две {револю́ции}.', 'W 1917 roku wybuchły dwie rewolucje.');
+  W('гражда́нская война́', 'ф', 'wojna domowa', '', 'p', 'По́сле револю́ции начала́сь {гражда́нская война́}.', 'Po rewolucji wybuchła wojna domowa.');
+  W('репре́ссии', 'мн', 'represje', 'D. репре́ссий', 't', 'В 1930-е го́ды {репре́ссии} косну́лись миллио́нов люде́й.', 'W latach 30. represje dotknęły miliony ludzi.');
+  W('о́ттепель', 'ж', 'odwilż (po 1956 r.)', 'D. о́ттепели', 'o', 'Хрущёвская {о́ттепель} дала́ немно́го свобо́ды.', 'Chruszczowowska odwilż dała trochę wolności.');
+  W('засто́й', 'ч', 'zastój (epoka Breżniewa)', 'D. засто́я', 'p', 'Эпо́ху Бре́жнева называ́ют {засто́ем}.', 'Epokę Breżniewa nazywa się zastojem.');
+  W('перестро́йка', 'ж', 'pieriestrojka, przebudowa', 'D. перестро́йки', 'p', 'Горбачёв на́чал {перестро́йку} в 1985 году́.', 'Gorbaczow rozpoczął pieriestrojkę w 1985 roku.');
+  W('распа́д СССР', 'ф', 'rozpad ZSRR (1991)', '', 'p', '{Распа́д СССР} произошёл в декабре́ 1991 го́да.', 'Rozpad ZSRR nastąpił w grudniu 1991 roku.');
+
+  /* ===================== C2 ===================== */
+  L('C2', 'c2_literatura', 'Język literacki');
+  W('тоска́', 'ж', 'tęsknota; przygnębienie, melancholia', 'D. тоски́', 'p', 'Его́ охвати́ла {тоска́} по ро́дине.', 'Ogarnęła go tęsknota za ojczyzną.');
+  W('су́мерки', 'мн', 'zmierzch', 'D. су́мерек', 'p', 'В {су́мерках} он верну́лся домо́й.', 'O zmierzchu wrócił do domu.');
+  W('мимолётный', 'п', 'przelotny, ulotny', '', 'o', 'Сча́стье бы́ло {мимолётным}.', 'Szczęście było ulotne.');
+  W('у́даль', 'ж', 'brawura, fantazja (ułańska)', 'D. у́дали', 'o', 'В его́ пе́сне слы́шна ру́сская {у́даль}.', 'W jego piosence słychać rosyjską fantazję.');
+  W('мерца́ть', 'д', 'migotać', 'мерца́ет', 'o', 'Звёзды {мерца́ли} над ре́кой.', 'Gwiazdy migotały nad rzeką.');
+  W('рок', 'ч', 'fatum, los', 'D. ро́ка', 'f', 'Над геро́ем тяготе́ет {рок}.', 'Nad bohaterem ciąży fatum.');
+  W('одино́чество', 'с', 'samotność', 'D. одино́чества', 'p', '{Одино́чество} поэ́та бы́ло доброво́льным.', 'Samotność poety była dobrowolna.');
+  W('бе́здна', 'ж', 'otchłań', 'D. бе́здны', 'p', 'Он загляну́л в {бе́здну}.', 'Zajrzał w otchłań.');
+  W('уны́ние', 'с', 'przygnębienie', 'D. уны́ния', 'o', 'Не поддава́йся {уны́нию}!', 'Nie poddawaj się przygnębieniu!');
+  W('умиротворе́ние', 'с', 'ukojenie, spokój', 'D. умиротворе́ния', 'o', 'На душе́ бы́ло {умиротворе́ние}.', 'W duszy panował spokój.');
+  W('злора́дство', 'с', 'radość z cudzego nieszczęścia', 'D. злора́дства', 'p', 'В его́ улы́бке бы́ло {злора́дство}.', 'W jego uśmiechu była złośliwa satysfakcja.');
+  W('дух вре́мени', 'ф', 'duch czasu', '', 'p', 'Рома́н передаёт {дух вре́мени}.', 'Powieść oddaje ducha czasu.');
+
+  L('C2', 'c2_knizhny', 'Styl książkowy');
+  W('отпада́ть / отпа́сть', 'д', 'odpadać; stać się zbędnym', 'отпадёт', 'p', 'Тем са́мым {отпада́ет} необходи́мость в обсужде́нии.', 'Tym samym odpada potrzeba dyskusji.');
+  W('предава́ться / преда́ться', 'д', 'oddawać się (czemuś)', 'предаю́сь · преда́мся', 'p', 'Он {предава́лся} воспомина́ниям.', 'Oddawał się wspomnieniom.');
+  W('надлежа́ть', 'д', 'należeć (do obowiązków), wypadać', 'надлежи́т', 'p', 'Вам {надлежи́т} яви́ться в суд.', 'Ma się pan stawić w sądzie.');
+  W('всле́дствие', 'з', 'wskutek (+ D.)', '', 'p', '{Всле́дствие} ава́рии движе́ние останови́лось.', 'Wskutek awarii ruch został wstrzymany.');
+  W('ита́к', 'пр', 'a zatem, tak więc', '', 'o', '{Ита́к}, подведём ито́ги.', 'A zatem podsumujmy.');
+  W('поро́ю', 'пр', 'niekiedy', '', 'p', '{Поро́ю} он навеща́л моги́лу отца́.', 'Niekiedy odwiedzał grób ojca.');
+  W('посему́', 'пр', 'przeto, dlatego (książkowe)', '', 'o', 'Сро́ки исте́кли, {посему́} заявле́ние отклонено́.', 'Terminy upłynęły, przeto wniosek odrzucono.');
+  W('таки́м о́бразом', 'пр', 'w ten sposób; zatem', '', 'p', '{Таки́м о́бразом}, гипо́теза подтверди́лась.', 'W ten sposób hipoteza się potwierdziła.');
+  W('счита́ть необходи́мым', 'ф', 'uważać za konieczne', '', 'p', 'Я {счита́ю необходи́мым} доба́вить сле́дующее.', 'Uważam za konieczne dodać, co następuje.');
+  W('в дальне́йшем', 'пр', 'w dalszej kolejności, w przyszłości', '', 'p', '{В дальне́йшем} сле́дует учи́тывать …', 'W przyszłości należy uwzględniać…');
+  W('утра́тить си́лу', 'ф', 'utracić moc (prawną)', '', 'p', 'Зако́н {утра́тил си́лу}.', 'Ustawa utraciła moc.');
+  W('несмотря́ на то что', 'з', 'mimo że', '', 'p', '{Несмотря́ на то что} он уста́л, он рабо́тал да́льше.', 'Mimo że był zmęczony, pracował dalej.');
+
+  L('C2', 'c2_idiomy2', 'Idiomy (2)');
+  W('попа́сть в то́чку', 'ф', 'trafić w sedno', '', 'p', 'Ты {попа́л в то́чку}.', 'Trafiłeś w sedno.');
+  W('как по ма́слу', 'ф', 'jak z płatka', '', 'p', 'Всё прошло́ {как по ма́слу}.', 'Wszystko poszło jak z płatka.');
+  W('руби́ть с плеча́', 'ф', 'działać pochopnie, z marszu', '', 'o', 'Не {руби́ с плеча́}, поду́май.', 'Nie działaj pochopnie, pomyśl.');
+  W('говори́ть без обиняко́в', 'ф', 'mówić bez ogródek', '', 'o', 'Она́ {говори́т без обиняко́в}.', 'Ona mówi bez ogródek.');
+  W('вы́йти сухи́м из воды́', 'ф', 'wyjść z czegoś obronną ręką', '', 'p', 'Он опя́ть {вы́шел сухи́м из воды́}.', 'Znowu wyszedł z tego obronną ręką.');
+  W('стричь всех под одну́ гребёнку', 'ф', 'wrzucać wszystkich do jednego worka', '', 'o', 'Нельзя́ {стричь всех под одну́ гребёнку}.', 'Nie można wszystkich wrzucać do jednego worka.');
+  W('де́лать из му́хи слона́', 'ф', 'robić z igły widły', '', 'o', 'Не {де́лай из му́хи слона́}!', 'Nie rób z igły wideł!');
+  W('называ́ть ве́щи свои́ми имена́ми', 'ф', 'nazywać rzeczy po imieniu', '', 'p', 'Дава́й {называ́ть ве́щи свои́ми имена́ми}.', 'Nazywajmy rzeczy po imieniu.');
+  W('как ко́рове седло́', 'ф', 'pasuje jak pięść do nosa', '', 'o', 'Э́тот костю́м ему́ {как ко́рове седло́}.', 'Ten garnitur pasuje do niego jak pięść do nosa.');
+  W('и волки́ сы́ты, и о́вцы це́лы', 'ф', 'i wilk syty, i owca cała', '', 't', 'Мы нашли́ компроми́сс: {и волки́ сы́ты, и о́вцы це́лы}.', 'Znaleźliśmy kompromis: i wilk syty, i owca cała.');
+  W('жить на широ́кую но́гу', 'ф', 'żyć na wysokiej stopie', '', 'p', 'По́сле вы́игрыша они́ {живу́т на широ́кую но́гу}.', 'Po wygranej żyją na wysokiej stopie.');
+  W('э́то не моё де́ло', 'ф', 'to nie moja sprawa', '', 'p', 'Де́лай, что хо́чешь – {э́то не моё де́ло}.', 'Rób, co chcesz – to nie moja sprawa.');
+
+  L('C2', 'c2_lovushki', 'Pułapki dla Polaków');
+  W('благодари́ть (кого́)', 'ф', 'dziękować komuś (biernik!)', 'благодарю́ вас', 'p', 'Я {благодарю́} вас за по́мощь.', 'Dziękuję panu za pomoc.');
+  W('помога́ть (кому́)', 'ф', 'pomagać komuś (celownik)', '', 'p', 'Я {помога́ю} ма́ме.', 'Pomagam mamie.');
+  W('ждать (кого́/чего́)', 'ф', 'czekać na (bez przyimka!)', 'жду тебя́; жду письма́', 'p', 'Я {жду} тебя́ у вхо́да.', 'Czekam na ciebie przy wejściu.');
+  W('боя́ться (чего́)', 'ф', 'bać się (dopełniacz)', 'бою́сь соба́к', 'p', 'Она́ {бои́тся} экза́мена.', 'Ona boi się egzaminu.');
+  W('интересова́ться (чем)', 'ф', 'interesować się (narzędnik)', 'интересу́юсь исто́рией', 'p', 'Я {интересу́юсь} исто́рией.', 'Interesuję się historią.');
+  W('занима́ться (чем)', 'ф', 'zajmować się; uprawiać (narzędnik)', 'занима́юсь спо́ртом', 'p', 'Он {занима́ется} пла́ванием.', 'On uprawia pływanie.');
+  W('скуча́ть (по кому́)', 'ф', 'tęsknić za (по + celownik)', 'скуча́ю по тебе́', 'o', 'Я {скуча́ю} по тебе́.', 'Tęsknię za tobą.');
+  W('смея́ться (над кем)', 'ф', 'śmiać się z (над + narzędnik)', '', 'p', 'Не {сме́йся} на́до мной!', 'Nie śmiej się ze mnie!');
+  W('похо́ж (на кого́)', 'ф', 'podobny do (на + biernik)', 'похо́жа, похо́жи', 'p', 'Он о́чень {похо́ж} на отца́.', 'On jest bardzo podobny do ojca.');
+  W('по телефо́ну', 'ф', 'przez telefon', '', 'p', 'Мы говори́ли {по телефо́ну}.', 'Rozmawialiśmy przez telefon.');
+  W('учи́ть (что) / учи́ться (чему́)', 'ф', 'uczyć się czegoś (учи́ть стихи́ / учи́ться му́зыке)', '', 'p', 'Я {учу́} но́вые слова́.', 'Uczę się nowych słówek.');
+  W('че́рез (неде́лю)', 'ф', 'za (tydzień) – o czasie', 'за – w ciągu: сде́лал за час', 'o', 'Я верну́сь {че́рез} неде́лю.', 'Wrócę za tydzień.');
+})();
