@@ -443,3 +443,9 @@ a { color: var(--primary-d); }
   conic-gradient(from 0deg, transparent 0 20deg, currentColor 20deg 25deg, transparent 25deg 65deg, currentColor 65deg 70deg, transparent 70deg 110deg, currentColor 110deg 115deg, transparent 115deg 155deg, currentColor 155deg 160deg, transparent 160deg 200deg, currentColor 200deg 205deg, transparent 205deg 245deg, currentColor 245deg 250deg, transparent 250deg 290deg, currentColor 290deg 295deg, transparent 295deg 335deg, currentColor 335deg 340deg, transparent 340deg);
   color: var(--primary-d); -webkit-mask: radial-gradient(circle, #000 70%, transparent 71%); mask: radial-gradient(circle, #000 70%, transparent 71%); }
 .hero::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--fill), var(--red), var(--gold)); }
+
+/* ścieżki tematyczne */
+.lv-TR { background: linear-gradient(135deg, #2f5fd0, #2a9d8f); } .lv-AR { background: linear-gradient(135deg, #7c4a1e, #c48a12); }
+.lvtag { padding: 0 10px; }
+.tipcard { border-left: 5px solid var(--gold); }
+.tipcard ul { margin: .3em 0 0; padding-left: 1.2em; } .tipcard li { margin: .35em 0; }

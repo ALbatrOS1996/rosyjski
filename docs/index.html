@@ -463,6 +463,12 @@ a { color: var(--primary-d); }
   color: var(--primary-d); -webkit-mask: radial-gradient(circle, #000 70%, transparent 71%); mask: radial-gradient(circle, #000 70%, transparent 71%); }
 .hero::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--fill), var(--red), var(--gold)); }
 
+/* ścieżki tematyczne */
+.lv-TR { background: linear-gradient(135deg, #2f5fd0, #2a9d8f); } .lv-AR { background: linear-gradient(135deg, #7c4a1e, #c48a12); }
+.lvtag { padding: 0 10px; }
+.tipcard { border-left: 5px solid var(--gold); }
+.tipcard ul { margin: .3em 0 0; padding-left: 1.2em; } .tipcard li { margin: .35em 0; }
+
 </style>
 </head>
 <body>
@@ -1316,6 +1322,289 @@ var UA = window.UA || (window.UA = {});
 </script>
 <script>
 /* ============================================================
+   ŚCIEŻKI TEMATYCZNE (otwarte od razu, niezależne od A1–C2)
+   TR – Podróż: praktyczne słownictwo na wyjazd
+   AR – Archiwum i historia: kwerendy, typy dokumentów, stare teksty, historia
+   W(...) jak w words.js; słowo docelowe w przykładzie w {…}.
+   ============================================================ */
+var UA = window.UA || (window.UA = {});
+(function () {
+  var cur;
+  function L(level, id, name) { cur = id; UA.TOPICS.push({ id: id, name: name, level: level }); }
+  function W(ua, pos, pl, forms, sim, ex, exPl) {
+    UA.WORDS.push({ ua: ua, pos: pos, pl: pl, forms: forms || '', sim: sim, ex: ex || '', exPl: exPl || '', topic: cur });
+  }
+
+  /* ===================== PODRÓŻ ===================== */
+  L('TR', 'tr_vokzal', 'Dworzec i pociąg');
+  W('расписа́ние', 'с', 'rozkład jazdy; plan zajęć', 'D. расписа́ния', 'o', 'Где мо́жно посмотре́ть {расписа́ние} поездо́в?', 'Gdzie można zobaczyć rozkład pociągów?');
+  W('биле́тная ка́сса', 'ф', 'kasa biletowa', '', 'p', 'Биле́ты продаю́тся в {биле́тной ка́ссе} на пе́рвом этаже́.', 'Bilety sprzedaje się w kasie biletowej na parterze.');
+  W('отправле́ние', 'с', 'odjazd', 'D. отправле́ния', 'p', 'До {отправле́ния} по́езда оста́лось пять мину́т.', 'Do odjazdu pociągu zostało pięć minut.');
+  W('прибы́тие', 'с', 'przyjazd, przybycie', 'D. прибы́тия', 'p', 'Вре́мя {прибы́тия} – 18:40.', 'Godzina przyjazdu – 18:40.');
+  W('платфо́рма', 'ж', 'peron', 'D. платфо́рмы', 't', 'По́езд отправля́ется с тре́тьей {платфо́рмы}.', 'Pociąg odjeżdża z trzeciego peronu.');
+  W('путь', 'ч', 'tor; droga', 'D. пути́ (odmiana nieregularna)', 'p', 'По́езд стои́т на пя́том {пути́}.', 'Pociąg stoi na piątym torze.');
+  W('ваго́н', 'ч', 'wagon', 'D. ваго́на', 't', 'Наш {ваго́н} – седьмо́й.', 'Nasz wagon to siódmy.');
+  W('купе́', 'с', 'przedział (też: wagon z przedziałami)', 'nieodmienne', 'p', 'Мы е́дем в {купе́}, нас че́тверо.', 'Jedziemy w przedziale, jest nas czworo.');
+  W('плацка́рт', 'ч', 'wagon sypialny bez przedziałów (najtańszy)', 'D. плацка́рта', 'o', 'В {плацка́рте} деше́вле, но шу́мно.', 'W płackarcie jest taniej, ale głośno.');
+  W('ни́жняя по́лка', 'ф', 'dolna kuszetka', 'ве́рхняя по́лка – górna', 'p', 'У меня́ {ни́жняя по́лка}.', 'Mam dolną kuszetkę.');
+  W('проводни́к', 'ч', 'konduktor wagonu (opiekun wagonu)', 'D. проводника́ · ż. проводни́ца', 'p', '{Проводни́к} прове́рил биле́ты и па́спорта.', 'Konduktor sprawdził bilety i paszporty.');
+  W('электри́чка', 'ж', 'pociąg podmiejski', 'D. электри́чки', 'p', 'До да́чи мы е́дем на {электри́чке}.', 'Na daczę jedziemy pociągiem podmiejskim.');
+  W('туда́ и обра́тно', 'ф', 'tam i z powrotem (bilet w obie strony)', '', 'p', 'Оди́н биле́т {туда́ и обра́тно}, пожа́луйста.', 'Jeden bilet w obie strony, proszę.');
+  W('ка́мера хране́ния', 'ф', 'przechowalnia bagażu', '', 'p', 'Мо́жно оста́вить чемода́н в {ка́мере хране́ния}?', 'Można zostawić walizkę w przechowalni?');
+  W('опа́здывать / опозда́ть', 'д', 'spóźniać się / spóźnić się', 'опа́здываю · опозда́ю', 'p', 'По́езд {опа́здывает} на два́дцать мину́т.', 'Pociąg spóźnia się dwadzieścia minut.');
+  W('Когда́ отправля́ется по́езд?', 'ф', 'kiedy odjeżdża pociąg?', '', 'p', 'Скажи́те, пожа́луйста, {когда́ отправля́ется по́езд} на Ри́гу?', 'Proszę powiedzieć, kiedy odjeżdża pociąg do Rygi?');
+
+  L('TR', 'tr_aeroport', 'Lotnisko i samolot');
+  W('рейс', 'ч', 'lot, kurs (numer lotu)', 'D. ре́йса', 'o', 'Наш {рейс} заде́рживается на час.', 'Nasz lot jest opóźniony o godzinę.');
+  W('вы́лет', 'ч', 'wylot, odlot', 'D. вы́лета', 'p', 'До {вы́лета} ещё два часа́.', 'Do wylotu są jeszcze dwie godziny.');
+  W('регистра́ция на рейс', 'ф', 'odprawa (check-in)', '', 'p', '{Регистра́ция на рейс} начина́ется за три часа́.', 'Odprawa zaczyna się trzy godziny przed lotem.');
+  W('поса́дка', 'ж', 'wejście na pokład, boarding; lądowanie', 'D. поса́дки', 'p', '{Поса́дка} на рейс заверша́ется.', 'Boarding na lot się kończy.');
+  W('поса́дочный тало́н', 'ф', 'karta pokładowa', '', 'o', 'Покажи́те ваш {поса́дочный тало́н}.', 'Proszę pokazać kartę pokładową.');
+  W('бага́ж', 'ч', 'bagaż', 'D. багажа́', 'p', 'Мой {бага́ж} не пришёл.', 'Mój bagaż nie dotarł.');
+  W('ручна́я кладь', 'ф', 'bagaż podręczny', '', 'o', 'Э́та су́мка – {ручна́я кладь}.', 'Ta torba to bagaż podręczny.');
+  W('та́можня', 'ж', 'urząd celny, odprawa celna', 'D. та́можни', 'o', 'На {та́можне} попроси́ли откры́ть чемода́н.', 'Na odprawie celnej poproszono o otwarcie walizki.');
+  W('па́спортный контро́ль', 'ф', 'kontrola paszportowa', '', 'p', 'На {па́спортном контро́ле} больша́я о́чередь.', 'Na kontroli paszportowej jest długa kolejka.');
+  W('о́чередь', 'ж', 'kolejka', 'D. о́череди', 'o', 'Я стою́ в {о́череди} уже́ час.', 'Stoję w kolejce już godzinę.');
+  W('заде́ржка', 'ж', 'opóźnienie', 'D. заде́ржки', 'o', 'Из-за́ пого́ды {заде́ржка} ре́йса.', 'Z powodu pogody lot jest opóźniony.');
+  W('пересе́сть', 'д', 'przesiąść się', 'переся́ду · ndk. переса́живаться', 'p', 'В Стамбу́ле на́до {пересе́сть} на друго́й рейс.', 'W Stambule trzeba przesiąść się na inny lot.');
+  W('Где получе́ние багажа́?', 'ф', 'gdzie jest odbiór bagażu?', '', 'p', 'Извини́те, {где получе́ние багажа́}?', 'Przepraszam, gdzie jest odbiór bagażu?');
+  W('ничего́ не деклари́ровать', 'ф', 'nie mieć nic do oclenia', '', 'p', 'Мне {ничего́ не} ну́жно {деклари́ровать}.', 'Nie mam nic do oclenia.');
+
+  L('TR', 'tr_gorod', 'Miasto, metro, taxi');
+  W('проездно́й', 'ч', 'bilet okresowy', 'D. проездно́го (odmiana przymiotnikowa)', 'o', 'Я купи́л {проездно́й} на неде́лю.', 'Kupiłem bilet tygodniowy.');
+  W('тра́нспортная ка́рта', 'ф', 'karta miejska (do metra i autobusów)', '', 'p', 'Пополни́те {тра́нспортную ка́рту} в ка́ссе.', 'Proszę doładować kartę miejską w kasie.');
+  W('маршру́тка', 'ж', 'marszrutka, prywatny bus', 'D. маршру́тки', 'p', 'До це́нтра мо́жно дое́хать на {маршру́тке}.', 'Do centrum można dojechać marszrutką.');
+  W('Останови́те здесь, пожа́луйста!', 'ф', 'proszę się tu zatrzymać!', '', 'o', 'Води́тель, {останови́те здесь, пожа́луйста}!', 'Panie kierowco, proszę się tu zatrzymać!');
+  W('такси́', 'с', 'taksówka', 'nieodmienne', 't', 'Вы́зовите мне {такси́}, пожа́луйста.', 'Proszę mi wezwać taksówkę.');
+  W('сда́ча', 'ж', 'reszta (pieniędzy)', 'D. сда́чи', 'o', '{Сда́чи} не на́до.', 'Reszty nie trzeba.');
+  W('Ско́лько с меня́?', 'ф', 'ile płacę?', '', 'o', 'Спаси́бо. {Ско́лько с меня́}?', 'Dziękuję. Ile płacę?');
+  W('Сле́дующая остано́вка …', 'ф', 'następny przystanek…', '', 'p', '«{Сле́дующая остано́вка} – Пло́щадь Револю́ции».', '„Następny przystanek – Plac Rewolucji”.');
+  W('коне́чная', 'ж', 'pętla, przystanek końcowy', 'D. коне́чной (odmiana przymiotnikowa)', 'p', 'Мы выхо́дим на {коне́чной}.', 'Wysiadamy na pętli.');
+  W('Осторо́жно, две́ри закрыва́ются!', 'ф', 'uwaga, drzwi się zamykają! (komunikat w metrze)', '', 'o', '«{Осторо́жно, две́ри закрыва́ются!} Сле́дующая ста́нция – Арба́тская».', '„Uwaga, drzwi się zamykają! Następna stacja – Arbatskaja”.');
+  W('ста́нция', 'ж', 'stacja (metra, kolei)', 'D. ста́нции', 't', 'На како́й {ста́нции} мне вы́йти?', 'Na której stacji mam wysiąść?');
+  W('про́бка', 'ж', 'korek (uliczny); korek (od butelki)', 'D. про́бки', 'p', 'Мы стоя́ли в {про́бке} час.', 'Staliśmy w korku godzinę.');
+  W('Вы выхо́дите?', 'ф', 'czy pan wysiada? (prośba o przepuszczenie)', '', 'o', 'Извини́те, {вы выхо́дите} на сле́дующей?', 'Przepraszam, wysiada pan na następnym?');
+  W('счётчик', 'ч', 'licznik (taksówki)', 'D. счётчика', 'o', 'Включи́те, пожа́луйста, {счётчик}.', 'Proszę włączyć licznik.');
+
+  L('TR', 'tr_nochleg', 'Nocleg');
+  W('У меня́ брони́рование.', 'ф', 'mam rezerwację', 'на фами́лию … – na nazwisko…', 'p', 'До́брый ве́чер, {у меня́ брони́рование} на фами́лию Нова́к.', 'Dobry wieczór, mam rezerwację na nazwisko Nowak.');
+  W('но́мер', 'ч', 'pokój hotelowy; numer', 'D. но́мера · lm. номера́', 'p', 'Ваш {но́мер} на тре́тьем этаже́.', 'Pana pokój jest na trzecim piętrze.');
+  W('одноме́стный', 'п', 'jednoosobowy', 'двухме́стный – dwuosobowy', 'p', 'У вас есть {одноме́стный} но́мер?', 'Macie pokój jednoosobowy?');
+  W('за́втрак включён', 'ф', 'śniadanie w cenie', '', 'p', 'В сто́имость {за́втрак включён}?', 'Czy śniadanie jest w cenie?');
+  W('администра́тор', 'ч', 'recepcjonista; administrator', 'D. администра́тора', 'p', 'Спроси́те у {администра́тора}.', 'Proszę zapytać recepcjonisty.');
+  W('заселя́ться / засели́ться', 'д', 'zameldować się (w hotelu)', 'заселя́юсь · заселю́сь', 'o', 'Во ско́лько мо́жно {засели́ться}?', 'O której można się zameldować?');
+  W('выселя́ться / вы́селиться', 'д', 'wymeldować się', 'выселя́юсь · вы́селюсь', 'o', 'Нам на́до {вы́селиться} до двена́дцати.', 'Musimy się wymeldować do dwunastej.');
+  W('полоте́нце', 'с', 'ręcznik', 'D. полоте́нца', 'p', 'Принеси́те, пожа́луйста, ещё одно́ {полоте́нце}.', 'Proszę przynieść jeszcze jeden ręcznik.');
+  W('кондиционе́р', 'ч', 'klimatyzacja; odżywka do włosów', 'D. кондиционе́ра', 'p', 'В но́мере не рабо́тает {кондиционе́р}.', 'W pokoju nie działa klimatyzacja.');
+  W('Не рабо́тает …', 'ф', 'nie działa…', '', 'p', 'Извини́те, в ва́нной {не рабо́тает} душ.', 'Przepraszam, w łazience nie działa prysznic.');
+  W('хо́стел', 'ч', 'hostel', 'D. хо́стела', 't', 'Мы останови́лись в {хо́стеле}.', 'Zatrzymaliśmy się w hostelu.');
+  W('посу́точно', 'пр', 'na doby (wynajem)', '', 'o', 'Сдаю́ кварти́ру {посу́точно}.', 'Wynajmę mieszkanie na doby.');
+  W('Како́й паро́ль от вай-фа́я?', 'ф', 'jakie jest hasło do Wi-Fi?', '', 'p', 'Скажи́те, {како́й паро́ль от вай-фа́я}?', 'Proszę powiedzieć, jakie jest hasło do Wi-Fi?');
+  W('шу́мно', 'пр', 'głośno', 'ти́хо – cicho', 'o', 'В на́шем но́мере о́чень {шу́мно}.', 'W naszym pokoju jest bardzo głośno.');
+
+  L('TR', 'tr_eda', 'Restauracja i jedzenie');
+  W('Сто́лик на двои́х, пожа́луйста.', 'ф', 'stolik dla dwojga, proszę', '', 'p', 'До́брый ве́чер! {Сто́лик на двои́х, пожа́луйста}.', 'Dobry wieczór! Stolik dla dwojga, proszę.');
+  W('Что вы посове́туете?', 'ф', 'co pan poleca?', '', 'p', '{Что вы посове́туете} из ме́стной ку́хни?', 'Co pan poleca z miejscowej kuchni?');
+  W('У меня́ аллерги́я на …', 'ф', 'mam alergię na…', '', 'p', '{У меня́ аллерги́я на} оре́хи.', 'Mam alergię na orzechy.');
+  W('Счёт, пожа́луйста.', 'ф', 'rachunek, proszę', '', 'p', 'Де́вушка, {счёт, пожа́луйста}!', 'Proszę pani, rachunek proszę!');
+  W('Мо́жно ка́ртой?', 'ф', 'można kartą?', 'нали́чными – gotówką', 'p', 'А {мо́жно ка́ртой}?', 'A można kartą?');
+  W('Прия́тного аппети́та!', 'ф', 'smacznego!', '', 'p', 'Вот ваш суп. {Прия́тного аппети́та}!', 'Oto pana zupa. Smacznego!');
+  W('сто́ловая', 'ж', 'stołówka, tani bar', 'D. сто́ловой (odmiana przymiotnikowa)', 'p', 'В {сто́ловой} вку́сно и недо́рого.', 'W stołówce jest smacznie i niedrogo.');
+  W('би́знес-ланч', 'ч', 'zestaw obiadowy (tańszy w porze lunchu)', 'D. би́знес-ла́нча', 'p', 'С двена́дцати до четырёх у нас {би́знес-ланч}.', 'Od dwunastej do czwartej mamy zestaw obiadowy.');
+  W('борщ', 'ч', 'barszcz (gęsty, z mięsem i kapustą)', 'D. борща́', 'p', 'Таре́лку {борща́} со смета́ной.', 'Talerz barszczu ze śmietaną.');
+  W('пельме́ни', 'мн', 'pielmieni (pierożki z mięsem)', 'D. пельме́ней', 'p', 'Мне по́рцию {пельме́ней}, пожа́луйста.', 'Dla mnie porcję pielmieni, proszę.');
+  W('блины́', 'мн', 'naleśniki, bliny', 'lp. блин', 'p', 'На за́втрак – {блины́} с икро́й.', 'Na śniadanie – bliny z kawiorem.');
+  W('шашлы́к', 'ч', 'szaszłyk', 'D. шашлыка́', 't', 'Попро́буйте {шашлы́к} из бара́нины.', 'Proszę spróbować szaszłyka z baraniny.');
+  W('квас', 'ч', 'kwas chlebowy', 'D. ква́са', 't', 'Ле́том я пью холо́дный {квас}.', 'Latem piję zimny kwas chlebowy.');
+  W('морс', 'ч', 'mors – napój z owoców leśnych', 'D. мо́рса', 'o', 'Клю́квенный {морс}, пожа́луйста.', 'Mors żurawinowy, proszę.');
+  W('на вы́нос', 'ф', 'na wynos', 'здесь – na miejscu', 'o', 'Ко́фе {на вы́нос}, пожа́луйста.', 'Kawę na wynos, proszę.');
+  W('без мя́са', 'ф', 'bez mięsa', 'вегетариа́нский – wegetariański', 'p', 'У вас есть что́-нибудь {без мя́са}?', 'Macie coś bez mięsa?');
+
+  L('TR', 'tr_dengi', 'Pieniądze i zakupy');
+  W('обме́н валю́ты', 'ф', 'wymiana walut, kantor', '', 'p', 'Где здесь {обме́н валю́ты}?', 'Gdzie tu jest kantor?');
+  W('курс', 'ч', 'kurs (waluty); kurs (nauki)', 'D. ку́рса', 't', 'Како́й сего́дня {курс} е́вро?', 'Jaki jest dziś kurs euro?');
+  W('нали́чные', 'мн', 'gotówka', 'D. нали́чных · нали́чными – gotówką', 'o', 'У меня́ нет {нали́чных}.', 'Nie mam gotówki.');
+  W('банкома́т', 'ч', 'bankomat', 'D. банкома́та', 't', '{Банкома́т} не принима́ет мою́ ка́рту.', 'Bankomat nie przyjmuje mojej karty.');
+  W('снима́ть / снять де́ньги', 'ф', 'wypłacać / wypłacić pieniądze', '', 'p', 'Мне ну́жно {снять де́ньги}.', 'Muszę wypłacić pieniądze.');
+  W('торгова́ться', 'д', 'targować się', 'торгу́юсь, торгу́ешься', 'p', 'На ры́нке мо́жно {торгова́ться}.', 'Na targu można się targować.');
+  W('сувени́р', 'ч', 'pamiątka', 'D. сувени́ра', 't', 'Я куплю́ {сувени́р} для ма́мы.', 'Kupię pamiątkę dla mamy.');
+  W('матрёшка', 'ж', 'matrioszka', 'D. матрёшки', 't', 'Ско́лько сто́ит э́та {матрёшка}?', 'Ile kosztuje ta matrioszka?');
+  W('чек', 'ч', 'paragon; czek', 'D. че́ка', 'p', 'Возьми́те, пожа́луйста, {чек}.', 'Proszę wziąć paragon.');
+  W('приме́рочная', 'ж', 'przymierzalnia', 'D. приме́рочной (odmiana przymiotnikowa)', 'p', 'Где {приме́рочная}?', 'Gdzie jest przymierzalnia?');
+  W('Э́то сли́шком до́рого.', 'ф', 'to za drogo', '', 'p', '{Э́то сли́шком до́рого}. А подеше́вле есть?', 'To za drogo. A coś tańszego jest?');
+  W('Я про́сто смотрю́.', 'ф', 'tylko się rozglądam', '', 'p', 'Спаси́бо, {я про́сто смотрю́}.', 'Dziękuję, tylko się rozglądam.');
+
+  L('TR', 'tr_pomosh', 'Zdrowie i nagłe wypadki');
+  W('Мне пло́хо.', 'ф', 'źle się czuję', '', 'p', 'Извини́те, {мне пло́хо}.', 'Przepraszam, źle się czuję.');
+  W('Помоги́те!', 'ф', 'pomocy!', '', 'p', '{Помоги́те}! Вы́зовите ско́рую!', 'Pomocy! Wezwijcie karetkę!');
+  W('Вы́зовите врача́!', 'ф', 'proszę wezwać lekarza!', '', 'p', 'Челове́ку пло́хо, {вы́зовите врача́}!', 'Człowiek źle się czuje, proszę wezwać lekarza!');
+  W('обезбо́ливающее', 'с', 'lek przeciwbólowy', 'D. обезбо́ливающего', 'o', 'У вас есть {обезбо́ливающее}?', 'Macie coś przeciwbólowego?');
+  W('пла́стырь', 'ч', 'plaster', 'D. пла́стыря', 'p', 'Мне ну́жен {пла́стырь}.', 'Potrzebuję plastra.');
+  W('поли́ция', 'ж', 'policja', 'D. поли́ции', 't', 'Где ближа́йший отде́л {поли́ции}?', 'Gdzie jest najbliższy komisariat policji?');
+  W('Меня́ обокра́ли.', 'ф', 'okradziono mnie', '', 'o', '{Меня́ обокра́ли} в метро́.', 'Okradziono mnie w metrze.');
+  W('Я потеря́л па́спорт.', 'ф', 'zgubiłem paszport', 'потеря́ла (ż.)', 'p', 'Что де́лать? {Я потеря́л па́спорт}.', 'Co robić? Zgubiłem paszport.');
+  W('посо́льство', 'с', 'ambasada', 'D. посо́льства · ко́нсульство – konsulat', 'p', 'Мне на́до в По́льское {посо́льство}.', 'Muszę iść do polskiej ambasady.');
+  W('бюро́ нахо́док', 'ф', 'biuro rzeczy znalezionych', '', 'o', 'Обрати́тесь в {бюро́ нахо́док}.', 'Proszę się zwrócić do biura rzeczy znalezionych.');
+  W('Э́то сро́чно.', 'ф', 'to pilne', '', 'p', 'Пожа́луйста, {э́то сро́чно}.', 'Proszę, to pilne.');
+  W('Я не понима́ю, напиши́те, пожа́луйста.', 'ф', 'nie rozumiem, proszę napisać', '', 'p', '{Я не понима́ю, напиши́те, пожа́луйста}, а́дрес.', 'Nie rozumiem, proszę napisać adres.');
+
+  L('TR', 'tr_orient', 'Orientacja w mieście');
+  W('Как пройти́ к …?', 'ф', 'jak dojść do…?', '', 'p', 'Скажи́те, {как пройти́ к} Эрмита́жу?', 'Proszę powiedzieć, jak dojść do Ermitażu?');
+  W('Где нахо́дится …?', 'ф', 'gdzie się znajduje…?', '', 'p', '{Где нахо́дится} ближа́йшая апте́ка?', 'Gdzie znajduje się najbliższa apteka?');
+  W('на углу́', 'ф', 'na rogu', '', 'p', 'Ка́сса {на углу́}.', 'Kasa jest na rogu.');
+  W('напро́тив', 'пр', 'naprzeciwko', '', 'p', 'Гости́ница {напро́тив} вокза́ла.', 'Hotel jest naprzeciwko dworca.');
+  W('ря́дом', 'пр', 'obok, w pobliżu', 'ря́дом с – obok', 'p', 'Метро́ совсе́м {ря́дом}.', 'Metro jest zaraz obok.');
+  W('пешко́м', 'пр', 'pieszo', '', 'p', 'Мо́жно дойти́ {пешко́м}?', 'Można dojść pieszo?');
+  W('перекрёсток', 'ч', 'skrzyżowanie', 'D. перекрёстка', 'p', 'На {перекрёстке} поверни́те напра́во.', 'Na skrzyżowaniu proszę skręcić w prawo.');
+  W('светофо́р', 'ч', 'sygnalizacja świetlna', 'D. светофо́ра', 'o', 'Иди́те до {светофо́ра}.', 'Proszę iść do świateł.');
+  W('переу́лок', 'ч', 'zaułek, przecznica', 'D. переу́лка', 'p', 'Кафе́ в ма́леньком {переу́лке}.', 'Kawiarnia jest w małym zaułku.');
+  W('проспе́кт', 'ч', 'aleja, prospekt', 'D. проспе́кта', 'p', 'Мы гуля́ли по Не́вскому {проспе́кту}.', 'Spacerowaliśmy po Newskim Prospekcie.');
+  W('на́бережная', 'ж', 'nabrzeże, bulwar', 'D. на́бережной (odmiana przymiotnikowa)', 'p', 'Гости́ница на {на́бережной} реки́.', 'Hotel jest na nabrzeżu rzeki.');
+  W('Я заблуди́лся.', 'ф', 'zgubiłem się, zabłądziłem', 'заблуди́лась (ż.)', 'p', 'Извини́те, {я заблуди́лся}. Где мы?', 'Przepraszam, zgubiłem się. Gdzie jesteśmy?');
+  W('Покажи́те на ка́рте, пожа́луйста.', 'ф', 'proszę pokazać na mapie', '', 'p', 'Я не понима́ю. {Покажи́те на ка́рте, пожа́луйста}.', 'Nie rozumiem. Proszę pokazać na mapie.');
+
+  L('TR', 'tr_ekskursii', 'Zwiedzanie');
+  W('музе́й', 'ч', 'muzeum', 'D. музе́я', 't', '{Музе́й} закры́т по понеде́льникам.', 'Muzeum jest zamknięte w poniedziałki.');
+  W('входно́й биле́т', 'ф', 'bilet wstępu', '', 'p', 'Ско́лько сто́ит {входно́й биле́т}?', 'Ile kosztuje bilet wstępu?');
+  W('льго́тный', 'п', 'ulgowy', 'льго́тный биле́т', 'p', 'Для студе́нтов есть {льго́тный} биле́т.', 'Dla studentów jest bilet ulgowy.');
+  W('экскурсово́д', 'ч', 'przewodnik (osoba)', 'D. экскурсово́да', 'o', '{Экскурсово́д} говори́т по-англи́йски?', 'Czy przewodnik mówi po angielsku?');
+  W('ау́диогид', 'ч', 'audioprzewodnik', 'D. ау́диогида', 'p', 'Мо́жно взять {ау́диогид} на по́льском?', 'Można wziąć audioprzewodnik po polsku?');
+  W('часы́ рабо́ты', 'ф', 'godziny otwarcia', '', 'p', 'Каки́е у вас {часы́ рабо́ты}?', 'Jakie są godziny otwarcia?');
+  W('выходно́й день', 'ф', 'dzień wolny (muzeum zamknięte)', '', 'p', 'Вто́рник – {выходно́й день}.', 'Wtorek to dzień, w którym jest zamknięte.');
+  W('Фотографи́ровать запрещено́.', 'ф', 'fotografowanie zabronione', '', 'p', 'В э́том за́ле {фотографи́ровать запрещено́}.', 'W tej sali nie wolno fotografować.');
+  W('собо́р', 'ч', 'sobór, katedra', 'D. собо́ра', 'p', '{Собо́р} Васи́лия Блаже́нного стои́т на Кра́сной пло́щади.', 'Sobór Wasyla Błogosławionego stoi na Placu Czerwonym.');
+  W('монасты́рь', 'ч', 'klasztor, monaster', 'D. монастыря́', 'p', 'Мы е́здили в ста́рый {монасты́рь}.', 'Jeździliśmy do starego klasztoru.');
+  W('кремль', 'ч', 'kreml (gród warowny w centrum miasta)', 'D. кремля́', 'p', 'В Ка́зани то́же есть {кремль}.', 'W Kazaniu też jest kreml.');
+  W('уса́дьба', 'ж', 'dwór, posiadłość ziemska', 'D. уса́дьбы', 'o', 'Мы посети́ли {уса́дьбу} Толсто́го.', 'Odwiedziliśmy posiadłość Tołstoja.');
+  W('кре́пость', 'ж', 'twierdza', 'D. кре́пости', 'p', 'Петропа́вловская {кре́пость} – в Петербу́рге.', 'Twierdza Pietropawłowska jest w Petersburgu.');
+
+  L('TR', 'tr_obshchenie', 'Rozmowa i grzeczność');
+  W('Отку́да вы?', 'ф', 'skąd pan(i) jest?', 'na „ty”: Отку́да ты?', 'p', 'Вы хорошо́ говори́те. {Отку́да вы}?', 'Dobrze pan mówi. Skąd pan jest?');
+  W('Я из По́льши.', 'ф', 'jestem z Polski', '', 'p', '{Я из По́льши}, из Кра́кова.', 'Jestem z Polski, z Krakowa.');
+  W('Говори́те, пожа́луйста, ме́дленнее.', 'ф', 'proszę mówić wolniej', '', 'p', 'Извини́те, {говори́те, пожа́луйста, ме́дленнее}.', 'Przepraszam, proszę mówić wolniej.');
+  W('Повтори́те, пожа́луйста.', 'ф', 'proszę powtórzyć', '', 'p', 'Я не расслы́шал. {Повтори́те, пожа́луйста}.', 'Nie dosłyszałem. Proszę powtórzyć.');
+  W('Как э́то по-ру́сски?', 'ф', 'jak to jest po rosyjsku?', '', 'p', '{Как э́то по-ру́сски}? Я забы́л сло́во.', 'Jak to jest po rosyjsku? Zapomniałem słowa.');
+  W('Ничего́ стра́шного.', 'ф', 'nic nie szkodzi', '', 'o', '— Извини́те! — {Ничего́ стра́шного}.', '— Przepraszam! — Nic nie szkodzi.');
+  W('Без пробле́м.', 'ф', 'nie ma problemu', '', 'p', '— Мо́жно здесь сесть? — {Без пробле́м}.', '— Można tu usiąść? — Nie ma problemu.');
+  W('Дава́йте на «ты».', 'ф', 'przejdźmy na „ty”', '', 'p', 'Мы же рове́сники, {дава́йте на «ты»}.', 'Jesteśmy rówieśnikami, przejdźmy na „ty”.');
+  W('С удово́льствием!', 'ф', 'z przyjemnością!', '', 'p', '— Пойдём в кино́? — {С удово́льствием}!', '— Pójdziemy do kina? — Z przyjemnością!');
+  W('Счастли́вого пути́!', 'ф', 'szczęśliwej podróży!', '', 'p', 'Спаси́бо за всё и {счастли́вого пути́}!', 'Dziękuję za wszystko i szczęśliwej podróży!');
+  W('Всего́ хоро́шего!', 'ф', 'wszystkiego dobrego! (na pożegnanie)', '', 'p', 'До свида́ния, {всего́ хоро́шего}!', 'Do widzenia, wszystkiego dobrego!');
+  W('Бу́дьте добры́ …', 'ф', 'bardzo proszę… (uprzejma prośba)', '', 'o', '{Бу́дьте добры́}, переда́йте соль.', 'Bądź pan łaskaw, proszę podać sól.');
+
+  /* ===================== ARCHIWUM I HISTORIA ===================== */
+  L('AR', 'ar_arhiv', 'W archiwum');
+  W('архи́в', 'ч', 'archiwum', 'D. архи́ва', 't', 'Я рабо́таю в {архи́ве} уже́ неде́лю.', 'Pracuję w archiwum już tydzień.');
+  W('чита́льный зал', 'ф', 'czytelnia', '', 'p', '{Чита́льный зал} рабо́тает с десяти́ до пяти́.', 'Czytelnia jest czynna od dziesiątej do piątej.');
+  W('архиви́ст', 'ч', 'archiwista', 'D. архиви́ста', 't', '{Архиви́ст} помо́г мне найти́ о́пись.', 'Archiwista pomógł mi znaleźć inwentarz.');
+  W('фонд', 'ч', 'zespół archiwalny (fond); fundusz', 'D. фо́нда · skrót: ф.', 'p', 'Докуме́нты храня́тся в {фо́нде} губе́рнского правле́ния.', 'Dokumenty są przechowywane w zespole rządu gubernialnego.');
+  W('о́пись', 'ж', 'inwentarz, spis (seria w zespole)', 'D. о́писи · skrót: оп.', 'o', 'В {о́писи} два ты́сячи дел.', 'W inwentarzu jest dwa tysiące jednostek.');
+  W('де́ло', 'с', 'jednostka archiwalna, teczka (sprawa)', 'D. де́ла · lm. дела́ · skrót: д.', 'f', 'Я заказа́л пять {дел} из э́той о́писи.', 'Zamówiłem pięć teczek z tego inwentarza.');
+  W('лист', 'ч', 'karta (archiwalna), arkusz; liść', 'D. листа́ · skrót: л. · об. – verso', 'p', 'Ну́жная за́пись на тре́тьем {листе́}.', 'Potrzebny zapis jest na trzeciej karcie.');
+  W('шифр', 'ч', 'sygnatura (archiwalna); szyfr', 'D. ши́фра', 'p', 'Укажи́те по́лный архи́вный {шифр}.', 'Proszę podać pełną sygnaturę archiwalną.');
+  W('едини́ца хране́ния', 'ф', 'jednostka archiwalna', 'skrót: ед. хр.', 'p', 'В фо́нде три́ста {едини́ц хране́ния}.', 'W zespole jest trzysta jednostek archiwalnych.');
+  W('путеводи́тель', 'ч', 'przewodnik (po zasobie archiwum); przewodnik turystyczny (książka)', 'D. путеводи́теля', 'o', 'Снача́ла посмотри́те {путеводи́тель} по фо́ндам.', 'Najpierw proszę przejrzeć przewodnik po zasobie.');
+  W('тре́бование', 'с', 'rewers, zamówienie (akt do czytelni)', 'D. тре́бования', 'o', 'Запо́лните {тре́бование} на вы́дачу дел.', 'Proszę wypełnić rewers na wydanie akt.');
+  W('по́длинник', 'ч', 'oryginał', 'D. по́длинника', 'o', 'Нам вы́дали не ко́пию, а {по́длинник}.', 'Wydano nam nie kopię, tylko oryginał.');
+  W('ко́пия', 'ж', 'kopia', 'D. ко́пии · заве́ренная ко́пия – uwierzytelniona', 't', 'Мо́жно заказа́ть {ко́пию} э́того листа́?', 'Można zamówić kopię tej karty?');
+  W('до́пуск', 'ч', 'dopuszczenie, zgoda na dostęp', 'D. до́пуска', 'p', 'Для рабо́ты с э́тим фо́ндом ну́жен {до́пуск}.', 'Do pracy z tym zespołem potrzebna jest zgoda.');
+  W('рассекре́чивать / рассекре́тить', 'д', 'odtajniać / odtajnić', 'рассекре́чиваю · рассекре́чу', 'p', 'Докуме́нты {рассекре́тили} то́лько в девяно́стые.', 'Dokumenty odtajniono dopiero w latach dziewięćdziesiątych.');
+  W('сканко́пия', 'ж', 'skan, kopia cyfrowa', 'D. сканко́пии', 'p', 'Архи́в присыла́ет {сканко́пии} по электро́нной по́чте.', 'Archiwum przesyła skany pocztą elektroniczną.');
+
+  L('AR', 'ar_dokumenty', 'Rodzaje dokumentów');
+  W('гра́мота', 'ж', 'dokument, przywilej, dyplom; (st.) list', 'D. гра́моты · берестяна́я гра́мота – list na korze brzozowej', 'p', 'Ца́рская {гра́мота} подтвержда́ла права́ го́рода.', 'Carski dokument potwierdzał prawa miasta.');
+  W('ука́з', 'ч', 'ukaz, dekret', 'D. ука́за', 'p', 'Импера́тор подписа́л {ука́з} о сво́боде крестья́н.', 'Cesarz podpisał ukaz o wolności chłopów.');
+  W('манифе́ст', 'ч', 'manifest', 'D. манифе́ста', 't', 'Ца́рский {манифе́ст} объяви́ли в це́рквах.', 'Carski manifest ogłoszono w cerkwiach.');
+  W('донесе́ние', 'с', 'meldunek, raport (np. wywiadu, władz)', 'D. донесе́ния', 'o', 'Губерна́тор отпра́вил {донесе́ние} в Петербу́рг.', 'Gubernator wysłał meldunek do Petersburga.');
+  W('ра́порт', 'ч', 'raport (służbowy, wojskowy)', 'D. ра́порта', 't', 'В {ра́порте} офице́р опи́сывает бой.', 'W raporcie oficer opisuje bitwę.');
+  W('проше́ние', 'с', 'prośba, podanie, petycja', 'D. проше́ния', 'p', 'Вдова́ пода́ла {проше́ние} о пе́нсии.', 'Wdowa złożyła podanie o rentę.');
+  W('протоко́л допро́са', 'ф', 'protokół przesłuchania', '', 'p', 'В де́ле сохрани́лся {протоко́л допро́са}.', 'W teczce zachował się protokół przesłuchania.');
+  W('перепи́ска', 'ж', 'korespondencja', 'D. перепи́ски', 'p', 'Его́ {перепи́ска} с ма́терью опублико́вана.', 'Jego korespondencja z matką została opublikowana.');
+  W('рукопи́сь', 'ж', 'rękopis', 'D. рукопи́си', 'p', '{Рукопи́сь} рома́на храни́тся в архи́ве.', 'Rękopis powieści jest przechowywany w archiwum.');
+  W('по́дпись', 'ж', 'podpis', 'D. по́дписи', 'p', 'Под докуме́нтом стои́т {по́дпись} мини́стра.', 'Pod dokumentem widnieje podpis ministra.');
+  W('печа́ть', 'ж', 'pieczęć; druk, prasa', 'D. печа́ти', 'p', 'На гра́моте сохрани́лась воскова́я {печа́ть}.', 'Na dokumencie zachowała się woskowa pieczęć.');
+  W('ле́топись', 'ж', 'latopis, kronika', 'D. ле́тописи', 'p', '«По́весть временны́х лет» – древне́йшая {ле́топись}.', '„Powieść minionych lat” to najstarszy latopis.');
+  W('метри́ческая кни́га', 'ф', 'księga metrykalna (urodzeń, ślubów, zgonów)', '', 'p', 'За́пись о рожде́нии нашли́ в {метри́ческой кни́ге}.', 'Akt urodzenia znaleziono w księdze metrykalnej.');
+  W('ревизска́я ска́зка', 'ф', 'rewizja (spis ludności podatkowej, XVIII–XIX w.)', '', 'o', 'В {ревизско́й ска́зке} перечи́слены все крестья́не дере́вни.', 'W rewizji wymieniono wszystkich chłopów wsi.');
+  W('пе́репись', 'ж', 'spis (ludności)', 'D. пе́реписи · пе́репись населе́ния', 'p', 'Пе́рвая всео́бщая {пе́репись} прошла́ в 1897 году́.', 'Pierwszy powszechny spis ludności odbył się w 1897 roku.');
+  W('мемуа́ры', 'мн', 'pamiętniki, wspomnienia', 'D. мемуа́ров', 'p', 'Генера́л написа́л {мемуа́ры} в эмигра́ции.', 'Generał napisał wspomnienia na emigracji.');
+
+  L('AR', 'ar_paleografia', 'Stare teksty i daty');
+  W('дорефо́рменная орфогра́фия', 'ф', 'ortografia sprzed reformy 1918 r.', '', 'p', 'Кни́га напеча́тана в {дорефо́рменной орфогра́фии}.', 'Książka jest wydrukowana w ortografii sprzed reformy.');
+  W('ять', 'ж', 'jać (ѣ) – dawna litera, czytana jak е', 'D. ятя́', 'o', 'Бу́ква {ять} пи́шется в сло́ве «хлѣбъ».', 'Literę jać pisze się w słowie „chleb”.');
+  W('ер', 'ч', 'jer (ъ) – w starej pisowni na końcu wyrazów po spółgłosce', 'D. ера́', 'o', 'Ра́ньше {ер} писа́ли в конце́ сло́ва: «домъ».', 'Dawniej jer pisano na końcu wyrazu: „domъ”.');
+  W('и десятери́чное', 'ф', 'і – „i dziesiętne”, dawna litera przed samogłoską', '', 'o', 'В сло́ве «Россія» пи́шется {и десятери́чное}.', 'W słowie „Rossija” pisze się „i dziesiętne”.');
+  W('скоро́пись', 'ж', 'skoropis (szybkie pismo kancelaryjne XVI–XVIII w.)', 'D. скоро́писи', 'o', 'Докуме́нт XVII ве́ка напи́сан {скоро́писью}.', 'Dokument z XVII wieku jest napisany skoropisem.');
+  W('по́черк', 'ч', 'charakter pisma', 'D. по́черка', 'o', 'У писаря́ неразбо́рчивый {по́черк}.', 'Pisarz ma nieczytelny charakter pisma.');
+  W('неразбо́рчиво', 'пр', 'nieczytelnie', '', 'o', 'Фами́лия напи́сана {неразбо́рчиво}.', 'Nazwisko jest napisane nieczytelnie.');
+  W('ти́тло', 'с', 'titło (znak skrótu nad wyrazem)', 'D. ти́тла', 'o', 'Под {ти́тлом} пропу́щены бу́квы.', 'Pod titłem opuszczono litery.');
+  W('по ста́рому сти́лю', 'ф', 'według starego stylu (kalendarz juliański)', 'по но́вому сти́лю – gregoriański', 'p', 'Да́та ука́зана {по ста́рому сти́лю}.', 'Data jest podana według starego stylu.');
+  W('юлиа́нский календа́рь', 'ф', 'kalendarz juliański', '', 't', 'До 1918 го́да в Росси́и де́йствовал {юлиа́нский календа́рь}.', 'Do 1918 roku w Rosji obowiązywał kalendarz juliański.');
+  W('сокраще́ние', 'с', 'skrót', 'D. сокраще́ния', 'o', 'Расшифру́йте {сокраще́ние} «ед. хр.».', 'Proszę rozwinąć skrót „ed. chr.”.');
+  W('расшифро́вывать / расшифрова́ть', 'д', 'odczytywać, rozwijać (skrót); deszyfrować', 'расшифро́вываю · расшифру́ю', 'p', 'Мне не удаётся {расшифрова́ть} э́то сло́во.', 'Nie udaje mi się odczytać tego słowa.');
+
+  L('AR', 'ar_imperiya', 'Imperium: urzędy i stany');
+  W('губе́рния', 'ж', 'gubernia', 'D. губе́рнии', 'p', 'Ви́ленская {губе́рния} входи́ла в Се́веро-За́падный край.', 'Gubernia wileńska wchodziła w skład Kraju Północno-Zachodniego.');
+  W('уе́зд', 'ч', 'powiat (ujezd)', 'D. уе́зда', 'o', 'Име́ние находи́лось в Пи́нском {уе́зде}.', 'Majątek znajdował się w powiecie pińskim.');
+  W('во́лость', 'ж', 'gmina (wołość)', 'D. во́лости', 'p', 'Крестья́не {во́лости} вы́брали старшину́.', 'Chłopi gminy wybrali wójta.');
+  W('губерна́тор', 'ч', 'gubernator', 'D. губерна́тора · генера́л-губерна́тор', 'p', '{Губерна́тор} доложи́л о волне́ниях.', 'Gubernator zameldował o rozruchach.');
+  W('наме́стник', 'ч', 'namiestnik', 'D. наме́стника', 'p', '{Наме́стник} Ца́рства По́льского жил в Варша́ве.', 'Namiestnik Królestwa Polskiego mieszkał w Warszawie.');
+  W('чино́вник', 'ч', 'urzędnik', 'D. чино́вника', 'p', 'Ме́лкий {чино́вник} – геро́й мно́гих расска́зов Го́голя.', 'Drobny urzędnik to bohater wielu opowiadań Gogola.');
+  W('та́бель о ра́нгах', 'ф', 'tabela rang (hierarchia urzędnicza od 1722 r.)', '', 'o', '{Та́бель о ра́нгах} ввёл Пётр I.', 'Tabelę rang wprowadził Piotr I.');
+  W('дворяни́н', 'ч', 'szlachcic', 'D. дворяни́на · lm. дворя́не · дворя́нство', 'p', 'Его́ пра́дед был {дворяни́ном}.', 'Jego pradziadek był szlachcicem.');
+  W('купе́ц', 'ч', 'kupiec', 'D. купца́ · купе́чество – kupiectwo', 'p', '{Купе́ц} пе́рвой ги́льдии вёл торго́влю с Кита́ем.', 'Kupiec pierwszej gildii prowadził handel z Chinami.');
+  W('меща́нин', 'ч', 'mieszczanin', 'D. меща́нина · lm. меща́не', 'p', 'В ме́трике он запи́сан как {меща́нин}.', 'W metryce jest zapisany jako mieszczanin.');
+  W('крестья́нин', 'ч', 'chłop', 'D. крестья́нина · lm. крестья́не', 'p', 'Ка́ждый {крестья́нин} плати́л поду́шную пода́ть.', 'Każdy chłop płacił podatek pogłówny.');
+  W('поме́щик', 'ч', 'ziemianin, właściciel majątku', 'D. поме́щика', 'p', '{Поме́щик} владе́л тремя́ деревня́ми.', 'Ziemianin posiadał trzy wsie.');
+  W('духове́нство', 'с', 'duchowieństwo', 'D. духове́нства', 'p', 'Правосла́вное {духове́нство} вело́ метри́ческие кни́ги.', 'Duchowieństwo prawosławne prowadziło księgi metrykalne.');
+  W('зе́мство', 'с', 'ziemstwo (samorząd terytorialny od 1864 r.)', 'D. зе́мства', 'o', '{Зе́мство} открыва́ло шко́лы и больни́цы.', 'Ziemstwo otwierało szkoły i szpitale.');
+
+  L('AR', 'ar_polsha', 'Polska i Rosja');
+  W('разде́лы Ре́чи Посполи́той', 'ф', 'rozbiory Rzeczypospolitej', '', 'p', 'По́сле {разде́лов Ре́чи Посполи́той} Литва́ отошла́ к Росси́и.', 'Po rozbiorach Rzeczypospolitej Litwa przypadła Rosji.');
+  W('Ца́рство По́льское', 'ф', 'Królestwo Polskie (Kongresowe)', '', 'p', '{Ца́рство По́льское} со́здано в 1815 году́.', 'Królestwo Polskie utworzono w 1815 roku.');
+  W('Янва́рское восста́ние', 'ф', 'powstanie styczniowe (1863–1864)', '', 'p', 'По́сле {Янва́рского восста́ния} уси́лилась русифика́ция.', 'Po powstaniu styczniowym nasiliła się rusyfikacja.');
+  W('повста́нец', 'ч', 'powstaniec', 'D. повста́нца', 'p', '{Повста́нца} сосла́ли в Сиби́рь.', 'Powstańca zesłano na Syberię.');
+  W('ссы́лка', 'ж', 'zesłanie; odsyłacz, przypis, link', 'D. ссы́лки · ссы́льный – zesłaniec', 'o', 'Его́ пригово́рили к {ссы́лке} на поселе́ние.', 'Skazano go na zesłanie na osiedlenie.');
+  W('ка́торга', 'ж', 'katorga, ciężkie roboty', 'D. ка́торги', 'p', 'Он провёл де́сять лет на {ка́торге}.', 'Spędził dziesięć lat na katordze.');
+  W('конфиска́ция', 'ж', 'konfiskata', 'D. конфиска́ции', 't', 'Име́ние подве́рглось {конфиска́ции}.', 'Majątek uległ konfiskacie.');
+  W('русифика́ция', 'ж', 'rusyfikacja', 'D. русифика́ции', 't', 'Поли́тика {русифика́ции} косну́лась школ.', 'Polityka rusyfikacji objęła szkoły.');
+  W('по́льский вопро́с', 'ф', 'sprawa polska', '', 'p', '{По́льский вопро́с} обсужда́ли на Ве́нском конгре́ссе.', 'Sprawę polską omawiano na kongresie wiedeńskim.');
+  W('Каты́нское преступле́ние', 'ф', 'zbrodnia katyńska (1940)', '', 'p', '{Каты́нское преступле́ние} СССР призна́л лишь в 1990 году́.', 'ZSRR przyznał się do zbrodni katyńskiej dopiero w 1990 roku.');
+  W('депорта́ция', 'ж', 'deportacja', 'D. депорта́ции', 't', '{Депорта́ции} 1940–1941 годо́в косну́лись со́тен ты́сяч поля́ков.', 'Deportacje lat 1940–1941 dotknęły setki tysięcy Polaków.');
+  W('спецпоселе́ние', 'с', 'specjalne osiedle (miejsce zesłania)', 'D. спецпоселе́ния · спецпереселе́нец', 'o', 'Семью́ отпра́вили на {спецпоселе́ние} в Казахста́н.', 'Rodzinę wysłano do specjalnego osiedla w Kazachstanie.');
+
+  L('AR', 'ar_sssr', 'ZSRR: instytucje i represje');
+  W('доно́с', 'ч', 'donos', 'D. доно́са', 'p', 'Его́ арестова́ли по {доно́су} сосе́да.', 'Aresztowano go na podstawie donosu sąsiada.');
+  W('сле́дственное де́ло', 'ф', 'akta śledztwa', '', 'p', 'Внук прочита́л {сле́дственное де́ло} де́да.', 'Wnuk przeczytał akta śledztwa dziadka.');
+  W('обвине́ние', 'с', 'oskarżenie, zarzut', 'D. обвине́ния', 'p', '{Обвине́ние} в шпиона́же бы́ло ло́жным.', 'Oskarżenie o szpiegostwo było fałszywe.');
+  W('расстре́л', 'ч', 'rozstrzelanie', 'D. расстре́ла', 'o', 'Его́ приговори́ли к {расстре́лу} в 1937 году́.', 'Skazano go na rozstrzelanie w 1937 roku.');
+  W('ла́герь', 'ч', 'obóz', 'D. ла́геря · lm. лагеря́', 'p', 'Он прошёл че́рез {лагеря́} ГУЛА́Га.', 'Przeszedł przez obozy Gułagu.');
+  W('реабилита́ция', 'ж', 'rehabilitacja (pośmiertne uniewinnienie)', 'D. реабилита́ции', 't', 'Спра́вку о {реабилита́ции} вы́дали в 1956 году́.', 'Zaświadczenie o rehabilitacji wydano w 1956 roku.');
+  W('колхо́з', 'ч', 'kołchoz', 'D. колхо́за', 't', 'Крестья́н заставля́ли вступа́ть в {колхо́з}.', 'Chłopów zmuszano do wstępowania do kołchozu.');
+  W('раскула́чивание', 'с', 'rozkułaczanie', 'D. раскула́чивания', 'o', '{Раскула́чивание} уничто́жило зажи́точное крестья́нство.', 'Rozkułaczanie zniszczyło zamożne chłopstwo.');
+  W('пропи́ска', 'ж', 'meldunek (w ZSRR)', 'D. пропи́ски', 'p', 'Без {пропи́ски} нельзя́ бы́ло устро́иться на рабо́ту.', 'Bez meldunku nie można było dostać pracy.');
+  W('самизда́т', 'ч', 'samizdat (drugi obieg)', 'D. самизда́та', 'p', 'Кни́гу чита́ли в {самизда́те}.', 'Książkę czytano w drugim obiegu.');
+  W('диссиде́нт', 'ч', 'dysydent', 'D. диссиде́нта', 't', 'Акаде́мик Са́харов был изве́стным {диссиде́нтом}.', 'Akademik Sacharow był znanym dysydentem.');
+  W('Мемориа́л', 'ч', 'Memoriał (stowarzyszenie badające represje)', 'D. Мемориа́ла', 't', 'Да́нные о репресси́рованных собира́л «{Мемориа́л}».', 'Dane o represjonowanych zbierał „Memoriał”.');
+
+  L('AR', 'ar_istorik', 'Warsztat historyka');
+  W('истори́ческий исто́чник', 'ф', 'źródło historyczne', '', 'p', 'Ле́топись – ва́жный {истори́ческий исто́чник}.', 'Latopis to ważne źródło historyczne.');
+  W('историогра́фия', 'ж', 'historiografia', 'D. историогра́фии', 't', 'В ру́сской {историогра́фии} э́тот вопро́с спо́рный.', 'W historiografii rosyjskiej ta kwestia jest sporna.');
+  W('сно́ска', 'ж', 'przypis', 'D. сно́ски', 'o', 'Укажи́те архи́вный шифр в {сно́ске}.', 'Proszę podać sygnaturę archiwalną w przypisie.');
+  W('моногра́фия', 'ж', 'monografia', 'D. моногра́фии', 't', 'Он написа́л {моногра́фию} о ссы́льных поля́ках.', 'Napisał monografię o polskich zesłańcach.');
+  W('диссерта́ция', 'ж', 'rozprawa (doktorska); praca naukowa', 'D. диссерта́ции', 'p', 'Её {диссерта́ция} посвящена́ Сиби́ри.', 'Jej rozprawa jest poświęcona Syberii.');
+  W('публика́ция исто́чников', 'ф', 'edycja źródeł', '', 'p', 'Вы́шла но́вая {публика́ция исто́чников} по исто́рии Каты́ни.', 'Ukazała się nowa edycja źródeł do historii Katynia.');
+  W('достове́рность', 'ж', 'wiarygodność', 'D. достове́рности', 'o', '{Достове́рность} э́того свиде́тельства сомни́тельна.', 'Wiarygodność tego świadectwa jest wątpliwa.');
+  W('подде́лка', 'ж', 'fałszerstwo, falsyfikat', 'D. подде́лки', 'p', 'Экспе́рты доказа́ли, что гра́мота – {подде́лка}.', 'Eksperci dowiedli, że dokument jest falsyfikatem.');
+  W('датиро́вка', 'ж', 'datowanie', 'D. датиро́вки', 'p', '{Датиро́вка} ру́кописи вызыва́ет сомне́ния.', 'Datowanie rękopisu budzi wątpliwości.');
+  W('свиде́тельство', 'с', 'świadectwo, relacja; zaświadczenie', 'D. свиде́тельства', 'p', 'Мы собира́ем {свиде́тельства} очеви́дцев.', 'Zbieramy relacje naocznych świadków.');
+  W('очеви́дец', 'ч', 'naoczny świadek', 'D. очеви́дца', 'p', 'Воспомина́ния {очеви́дца} опублико́ваны.', 'Wspomnienia naocznego świadka zostały opublikowane.');
+  W('у́стная исто́рия', 'ф', 'historia mówiona', '', 'p', 'Прое́кт {у́стной исто́рии} запи́сывает интервью́ ветера́нов.', 'Projekt historii mówionej nagrywa wywiady z weteranami.');
+})();
+
+</script>
+<script>
+/* ============================================================
    TREŚCI: alfabet, fałszywi przyjaciele, wymowa, gramatyka, dialogi
    ============================================================ */
 var UA = window.UA || (window.UA = {});
@@ -1608,6 +1897,87 @@ UA.TEXTS = [
     pl: 'Czechowowi przypisuje się znaną zasadę: jeśli w pierwszym akcie na ścianie wisi strzelba, to w ostatnim musi wystrzelić. Paradoks polega na tym, że sam Czechow wielokrotnie łamał tę zasadę, dążąc do niedopowiedzenia i wewnętrznego dramatu. Jego sztuki sprawiają wrażenie, jakby „nic się nie działo”, jednak właśnie w pauzach i przemilczeniach kryje się ich główny sens. Nieprzypadkowo reżyserzy do dziś spierają się, jak je wystawiać.',
     qs: [['Na czym polega „zasada strzelby”?', ['każdy element wprowadzony na scenę musi zostać wykorzystany', 'sztuka musi mieć pięć aktów', 'aktorzy nie mogą mówić do widowni', 'scenografia ma być skromna'], 0], ['Co jest paradoksem?', ['Czechow nie pisał sztuk', 'sam Czechow wielokrotnie łamał tę zasadę', 'zasadę wymyślił Szekspir', 'strzelba nigdy nie pojawia się na scenie'], 1], ['Gdzie kryje się główny sens jego sztuk?', ['w pauzach i przemilczeniach', 'w długich monologach', 'w zakończeniach', 'w didaskaliach'], 0]] }
 ];
+
+</script>
+<script>
+/* ============================================================
+   TREŚCI ŚCIEŻEK TEMATYCZNYCH: ściągi „Dobrze wiedzieć”, dialogi, czytanki
+   ============================================================ */
+var UA = window.UA || (window.UA = {});
+
+UA.TIPS = {
+  tr_vokzal: ['Wagony dalekobieżne: <b>плацка́рт</b> (otwarty, najtańszy), <b>купе́</b> (4-osobowe przedziały), <b>СВ</b> (2-osobowe). Pościel (<b>бельё</b>) daje <b>проводни́к</b>, w wagonie jest kocioł z wrzątkiem (<b>кипято́к</b>).', 'Bilet dalekobieżny kupuje się zwykle imiennie – kasjer poprosi o paszport.', 'Peron to <b>платфо́рма</b>, a tor – <b>путь</b>: „по́езд на пя́том пути́” to „pociąg przy torze piątym”.'],
+  tr_aeroport: ['Na tablicach: <b>вы́лет</b> – odloty, <b>прилёт</b> – przyloty, <b>заде́ржан</b> – opóźniony, <b>отменён</b> – odwołany.', 'Bagaż podręczny to <b>ручна́я кладь</b>, nadawany – <b>бага́ж</b>.'],
+  tr_gorod: ['W metrze dobrze znać komunikaty: <b>Осторо́жно, две́ри закрыва́ются!</b> i <b>Сле́дующая ста́нция …</b>', 'W <b>маршру́тке</b> płaci się zwykle kierowcy, a żeby wysiąść, mówi się głośno: <b>Останови́те здесь, пожа́луйста!</b> albo <b>На остано́вке, пожа́луйста!</b>', 'W taksówkach coraz częściej zamawia się kurs przez aplikację; jeśli łapiesz auto na ulicy, ustal cenę przed jazdą.'],
+  tr_nochleg: ['Hotele zwykle proszą o paszport przy zameldowaniu – w wielu krajach regionu muszą zarejestrować pobyt cudzoziemca.', 'Mieszkania na doby oferuje się jako <b>кварти́ра посу́точно</b>.'],
+  tr_eda: ['<b>Сто́ловая</b> to tani bar z gotowymi daniami – dobry, szybki obiad. W porze lunchu wiele restauracji ma tańszy <b>би́знес-ланч</b>.', 'Kelnerkę woła się często po prostu: <b>Де́вушка!</b>, kelnera: <b>Молодо́й челове́к!</b> – to normalne, nie niegrzeczne.', 'Napiwek (<b>чаевы́е</b>) zwykle ok. 10%, nie jest obowiązkowy.'],
+  tr_dengi: ['W Rosji od 2022 r. zagraniczne karty Visa i Mastercard nie działają – trzeba mieć gotówkę. W innych krajach regionu (np. Kazachstan, Gruzja, Armenia) karty zwykle działają.', 'Na bazarach (<b>ры́нок</b>, <b>база́р</b>) targowanie się jest normalne, w sklepach – nie.'],
+  tr_pomosh: ['Numer alarmowy <b>112</b> działa w Rosji, Kazachstanie i wielu krajach regionu. W Rosji: <b>103</b> – pogotowie, <b>102</b> – policja, <b>101</b> – straż.', 'Apteka to <b>апте́ка</b>; leki przeciwbólowe i na przeziębienie zwykle bez recepty.'],
+  tr_orient: ['Typy ulic: <b>у́лица</b> – ulica, <b>проспе́кт</b> – szeroka aleja, <b>переу́лок</b> – zaułek, <b>на́бережная</b> – bulwar nad rzeką, <b>шоссе́</b> – droga wylotowa.', 'Na znakach: <b>Вход</b> – wejście, <b>Вы́ход</b> – wyjście, <b>Перехо́д</b> – przejście, <b>Не прислоня́ться</b> – nie opierać się (na drzwiach w metrze).'],
+  tr_ekskursii: ['W cerkwi prawosławnej kobiety zakrywają głowę chustą, mężczyźni zdejmują czapki. W wielu cerkwiach nie wolno fotografować w czasie nabożeństwa.', 'Muzea mają zwykle jeden dzień w tygodniu zamknięty – <b>выходно́й день</b> (często poniedziałek lub wtorek).', '<b>Кремль</b> to nie tylko moskiewski – wiele starych miast ma swój kreml (Kazań, Nowogród, Psków, Rostów).'],
+  tr_obshchenie: ['Rosyjski bywa językiem porozumienia także w Kazachstanie, Kirgistanie czy na Kaukazie, ale w wielu krajach (Ukraina, kraje bałtyckie, Gruzja) lepiej zacząć od języka lokalnego lub angielskiego i zapytać: <b>Мо́жно по-ру́сски?</b>', 'Do obcych dorosłych mówi się <b>вы</b>; uprzejmie zwraca się po imieniu i otczestwie: <b>А́нна Серге́евна</b>.'],
+  ar_arhiv: ['Sygnatura rosyjska: <b>Ф.</b> (фонд – zespół) · <b>Оп.</b> (о́пись – inwentarz) · <b>Д.</b> (де́ло – jednostka) · <b>Л.</b> (лист – karta) · <b>об.</b> (оборо́т – verso). Np. <b>ГАРФ. Ф. Р-8131. Оп. 37. Д. 4. Л. 12 об.</b>', 'Ważne archiwa: <b>РГАДА</b> (dawne akta do XVIII w.), <b>РГИА</b> (ministerstwa Imperium), <b>РГВИА</b> (wojsko do 1918), <b>ГАРФ</b> (państwo, XIX–XX w.), <b>РГАСПИ</b> (partia).', 'Akta z czasów Imperium dotyczące ziem polskich i litewskich leżą też w archiwach w Wilnie, Mińsku, Kijowie i Grodnie – często po rosyjsku.', 'W czytelni zamawia się akta na <b>тре́бование</b> (rewers) – zwykle z wyprzedzeniem kilku dni.'],
+  ar_dokumenty: ['W Królestwie Polskim akta stanu cywilnego prowadzono po rosyjsku od 1868 r. – stąd rosyjskie wpisy w polskich księgach parafialnych.', '<b>Метри́ческая кни́га</b> to księga metrykalna (urodzenia, śluby, zgony), <b>ревизска́я ска́зка</b> – spis ludności podatkowej (rewizje 1719–1858), <b>пе́репись 1897</b> – pierwszy powszechny spis ludności Imperium.'],
+  ar_paleografia: ['Reforma ortografii 1917–1918 usunęła litery <b>ѣ</b> (czytaj jak е), <b>і</b> (jak и), <b>ѳ</b> (jak ф), <b>ѵ</b> (jak и) oraz <b>ъ</b> na końcu wyrazów: <i>хлѣбъ → хлеб, Россія → Россия</i>.', 'Daty „starego stylu” (kalendarz juliański) były późniejsze od gregoriańskich o 11 dni w XVIII w., 12 dni w XIX w. i 13 dni od 1900 r. Rosja przeszła na nowy styl w 1918 r. (po 31 stycznia nastąpił 14 lutego).', 'W dokumentach często zapisuje się obie daty: <b>5/17 мая 1863 г.</b> – 5 maja starego stylu = 17 maja nowego.'],
+  ar_imperiya: ['Królestwo Polskie od 1867 r. dzieliło się na 10 guberni; ziemie litewsko-białoruskie tworzyły <b>Се́веро-За́падный край</b>.', 'Społeczeństwo Imperium dzieliło się na stany (<b>сосло́вия</b>): дворя́нство, духове́нство, купе́чество, меща́нство, крестья́нство – stan zapisywano w dokumentach, co pomaga w genealogii.'],
+  ar_polsha: ['Słowo <b>ссы́лка</b> ma dwa znaczenia: „zesłanie” i „odsyłacz / przypis / link” – w tekście naukowym zwykle chodzi o to drugie.', 'Akta zesłańców po 1863 r. znajdują się m.in. w archiwach syberyjskich (Irkuck, Tobolsk, Omsk) oraz w РГИА i ГАРФ.'],
+  ar_sssr: ['Akta śledcze NKWD/KGB w Rosji są w dużej części niedostępne; łatwiej o akta w archiwach Ukrainy i państw bałtyckich, które je otworzyły.', 'Stowarzyszenie <b>«Мемориа́л»</b> (rozwiązane w Rosji w latach 2021–2022) zebrało bazy danych ofiar represji – część z nich nadal jest dostępna w internecie.'],
+  ar_istorik: ['Rosyjskie nazwiska transliteruj w polskim tekście według polskiej transkrypcji (Чехов → Czechow), a w bibliografii – według normy przyjętej w danym wydawnictwie (np. ISO 9 lub tzw. transliteracja naukowa).', '<b>Сно́ска</b> to przypis dolny, <b>ссы́лка</b> – odsyłacz; „ук. соч.” = op. cit., „там же” = ibidem.']
+};
+
+UA.DIALOGS.push(
+  { id: 'v_poezde', unit: 'tr_vokzal', t: 'W pociągu', ua: 'В по́езде', roles: ['Проводни́ца', 'Пассажи́р'], lines: [
+    [0, 'До́брый ве́чер! Ваш биле́т и па́спорт, пожа́луйста.', 'Dobry wieczór! Proszę bilet i paszport.'],
+    [1, 'Вот, пожа́луйста. У меня́ ни́жняя по́лка в тре́тьем купе́.', 'Proszę. Mam dolną kuszetkę w trzecim przedziale.'],
+    [0, 'Проходи́те. Бельё бу́дете брать?', 'Proszę przejść. Weźmie pan pościel?'],
+    [1, 'Да, пожа́луйста. А где мо́жно взять кипято́к?', 'Tak, proszę. A gdzie można wziąć wrzątek?'],
+    [0, 'В нача́ле ваго́на, ря́дом с мои́м купе́.', 'Na początku wagonu, obok mojego przedziału.'],
+    [1, 'Спаси́бо. Во ско́лько мы прибыва́ем в Каза́нь?', 'Dziękuję. O której przyjeżdżamy do Kazania?'],
+    [0, 'В семь утра́. Я вас разбужу́ за полчаса́.', 'O siódmej rano. Obudzę pana pół godziny wcześniej.'],
+    [1, 'Отли́чно, спаси́бо большо́е!', 'Świetnie, dziękuję bardzo!']
+  ]},
+  { id: 'v_gostinice', unit: 'tr_nochleg', t: 'W hotelu', ua: 'В гости́нице', roles: ['Администра́тор', 'Гость'], lines: [
+    [1, 'До́брый ве́чер! У меня́ брони́рование на фами́лию Нова́к.', 'Dobry wieczór! Mam rezerwację na nazwisko Nowak.'],
+    [0, 'Здра́вствуйте! Одноме́стный но́мер на три но́чи, ве́рно?', 'Dzień dobry! Pokój jednoosobowy na trzy noce, zgadza się?'],
+    [1, 'Да. За́втрак включён?', 'Tak. Czy śniadanie jest w cenie?'],
+    [0, 'Да, с семи́ до десяти́. Ваш па́спорт, пожа́луйста.', 'Tak, od siódmej do dziesiątej. Proszę paszport.'],
+    [1, 'Вот. И како́й паро́ль от вай-фа́я?', 'Proszę. A jakie jest hasło do Wi-Fi?'],
+    [0, 'Он напи́сан на ка́рточке. Ваш но́мер на четвёртом этаже́, лифт напра́во.', 'Jest na karteczce. Pana pokój jest na czwartym piętrze, winda po prawej.'],
+    [1, 'Во ско́лько на́до вы́селиться?', 'Do której trzeba się wymeldować?'],
+    [0, 'До двена́дцати. Бага́ж мо́жно оста́вить у нас.', 'Do dwunastej. Bagaż można zostawić u nas.']
+  ]},
+  { id: 'v_arhive', unit: 'ar_arhiv', t: 'W czytelni archiwum', ua: 'В чита́льном за́ле', roles: ['Сотру́дница', 'Иссле́дователь'], lines: [
+    [1, 'Здра́вствуйте! Я истори́к из По́льши. Мо́жно офо́рмить про́пуск в чита́льный зал?', 'Dzień dobry! Jestem historykiem z Polski. Czy można wyrobić przepustkę do czytelni?'],
+    [0, 'Да, нужны́ па́спорт и письмо́ из ва́шего институ́та и́ли шко́лы. Кака́я у вас те́ма?', 'Tak, potrzebny jest paszport i pismo z instytutu albo szkoły. Jaki jest pana temat?'],
+    [1, 'По́льские ссы́льные по́сле Янва́рского восста́ния.', 'Polscy zesłańcy po powstaniu styczniowym.'],
+    [0, 'Посмотри́те путеводи́тель и о́писи фо́нда губе́рнского правле́ния.', 'Proszę przejrzeć przewodnik i inwentarze zespołu rządu gubernialnego.'],
+    [1, 'Я хоте́л бы заказа́ть три де́ла. Как запо́лнить тре́бование?', 'Chciałbym zamówić trzy jednostki. Jak wypełnić rewers?'],
+    [0, 'Укажи́те фонд, о́пись и но́мер де́ла. Дела́ вы́дадут послеза́втра.', 'Proszę podać zespół, inwentarz i numer jednostki. Akta wydamy pojutrze.'],
+    [1, 'Мо́жно фотографи́ровать докуме́нты?', 'Czy można fotografować dokumenty?'],
+    [0, 'Мо́жно, без вспы́шки. А заве́ренные ко́пии зака́зывают отде́льно.', 'Można, bez lampy błyskowej. A uwierzytelnione kopie zamawia się osobno.']
+  ]},
+  { id: 'o_predke', unit: 'ar_dokumenty', t: 'Szukam przodka', ua: 'В по́исках пре́дка', roles: ['Архиви́ст', 'Посети́тель'], lines: [
+    [1, 'Я ищу́ све́дения о праде́де. Он роди́лся в Ви́ленской губе́рнии о́коло 1870 го́да.', 'Szukam informacji o pradziadku. Urodził się w guberni wileńskiej około 1870 roku.'],
+    [0, 'Како́го он был вероиспове́дания?', 'Jakiego był wyznania?'],
+    [1, 'Като́лик. И, ка́жется, меща́нин.', 'Katolik. I chyba mieszczanin.'],
+    [0, 'Тогда́ начни́те с метри́ческих книг като́лических прихо́дов.', 'W takim razie proszę zacząć od ksiąg metrykalnych parafii katolickich.'],
+    [1, 'Они́ напи́саны по-ру́сски?', 'Są napisane po rosyjsku?'],
+    [0, 'В э́то вре́мя – ча́ще всего́ по-ру́сски, и́ногда по-лати́ни. И не забу́дьте: да́ты по ста́рому сти́лю.', 'W tym okresie najczęściej po rosyjsku, czasem po łacinie. I proszę nie zapomnieć: daty według starego stylu.'],
+    [1, 'Зна́чит, на́до приба́вить двена́дцать дней?', 'Czyli trzeba dodać dwanaście dni?'],
+    [0, 'Ве́рно, для девятна́дцатого ве́ка – двена́дцать.', 'Zgadza się, dla dziewiętnastego wieku – dwanaście.']
+  ]}
+);
+
+UA.TEXTS.push(
+  { id: 't_tr', level: 'TR', t: 'Koleją przez Kazachstan', ua: 'По́ездом по Казахста́ну',
+    text: 'В про́шлом году́ я е́хал на по́езде из Алма́ты в Аста́ну. Биле́т в купе́ я купи́л зара́нее, по па́спорту. Проводни́ца принесла́ бельё и чай в стака́не с подста́канником. Мои́ сосе́ди по купе́ угоща́ли меня́ ди́нями и расспра́шивали о По́льше. Мы е́хали почти́ су́тки, но вре́мя прошло́ бы́стро: разгово́ры, чай и бесконе́чная степь за окно́м.',
+    pl: 'W zeszłym roku jechałem pociągiem z Ałmaty do Astany. Bilet do przedziału kupiłem wcześniej, na paszport. Konduktorka przyniosła pościel i herbatę w szklance z koszyczkiem. Sąsiedzi z przedziału częstowali mnie melonami i wypytywali o Polskę. Jechaliśmy prawie dobę, ale czas minął szybko: rozmowy, herbata i niekończący się step za oknem.',
+    qs: [['Jak kupił bilet?', ['w pociągu', 'wcześniej, na paszport', 'przez znajomych', 'w automacie'], 1], ['Czym częstowali go sąsiedzi?', ['melonami', 'pielmieniami', 'chlebem', 'czekoladą'], 0], ['Ile trwała podróż?', ['dwie godziny', 'prawie dobę', 'tydzień', 'pół dnia'], 1]] },
+  { id: 't_ar', level: 'AR', t: 'Teczka zesłańca', ua: 'Де́ло ссы́льного',
+    text: 'В чита́льном за́ле мне вы́дали то́нкое де́ло в карто́нной обло́жке. На пе́рвом листе́ – проше́ние ссы́льного поля́ка о разреше́нии верну́ться на ро́дину. Он писа́л, что его́ мать тяжело́ больна́ и что он «никако́го уча́стия в беспоря́дках бо́лее не принима́ет». Ни́же – резолю́ция губерна́тора: «Отказа́ть». Да́та ука́зана по ста́рому сти́лю, а по́черк писаря́ места́ми совсе́м неразбо́рчив.',
+    pl: 'W czytelni wydano mi cienką teczkę w tekturowej okładce. Na pierwszej karcie – prośba polskiego zesłańca o zgodę na powrót do kraju. Pisał, że jego matka jest ciężko chora i że „żadnego udziału w rozruchach więcej nie bierze”. Niżej – rezolucja gubernatora: „Odmówić”. Data jest podana według starego stylu, a pismo kancelisty miejscami jest zupełnie nieczytelne.',
+    qs: [['O co prosił zesłaniec?', ['o pieniądze', 'o zgodę na powrót do kraju', 'o pracę', 'o przeniesienie do innej guberni'], 1], ['Jaka była decyzja gubernatora?', ['zgoda', 'odmowa', 'odroczenie', 'skierowanie do sądu'], 1], ['Co utrudnia lekturę?', ['dokument jest po łacinie', 'nieczytelne pismo kancelisty', 'brak daty', 'dokument jest uszkodzony przez wodę'], 1]] }
+);
 
 </script>
 <script>
@@ -1996,6 +2366,7 @@ var UA = window.UA || (window.UA = {});
     user: '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>',
     route: '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/>',
     headphones: '<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>',
+    globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
     lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'
   };
   function ic(n, c) { return '<svg class="ic ' + (c || '') + '" viewBox="0 0 24 24" aria-hidden="true">' + (IC[n] || '') + '</svg>'; }
@@ -2064,7 +2435,9 @@ var UA = window.UA || (window.UA = {});
   /* ============================================================
      POZIOMY I ŚCIEŻKA A1 → C2
      ============================================================ */
-  var LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  var LEVELS = ['TR', 'AR', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  var THEME = { TR: ['Podróż', 'Podróż – praktyczne słownictwo na wyjazd'], AR: ['Archiwum', 'Archiwum i historia – kwerendy, dokumenty, źródła'] };
+  function lvLabel(lv) { return THEME[lv] ? THEME[lv][0] : lv; }
   var LEVEL_NAME = { A1: 'początkujący', A2: 'podstawowy', B1: 'średni', B2: 'średnio zaawansowany', C1: 'zaawansowany', C2: 'biegły' };
   S.unlocked = S.unlocked || {};
   S.stats.listen = S.stats.listen || 0;
@@ -2075,7 +2448,7 @@ var UA = window.UA || (window.UA = {});
   function unitById(id) { return UA.TOPICS.filter(function (t) { return t.id === id; })[0]; }
   function unlocked(u) {
     var i = UA.TOPICS.indexOf(u);
-    if (i <= 0 || S.unlocked[u.id]) return true;
+    if (i <= 0 || THEME[u.level] || S.unlocked[u.id]) return true; // ścieżki tematyczne otwarte od razu
     var prev = UA.TOPICS[i - 1];
     return unlocked(prev) && unitProg(prev) >= 0.7;
   }
@@ -2110,7 +2483,7 @@ var UA = window.UA || (window.UA = {});
     h += '<a class="card nextunit" href="#/etap/' + cu.id + '">' + ring(unitProg(cu), Math.round(unitProg(cu) * 100) + '%') + '<div><p class="kicker">Twoja lekcja · ' + cu.level + '</p><b>' + esc(cu.name) + '</b><small>' + unitWords(cu.id).filter(seen).length + ' z ' + unitWords(cu.id).length + ' słów poznanych</small></div>' + ic('next') + '</a>';
     h += '<section class="kpis"><div class="kpi"><b>' + r.learning + '</b><small>słów rozpoznajesz</small></div><div class="kpi"><b>' + p.learning + '</b><small>słów potrafisz napisać</small></div><div class="kpi"><b>' + r.known + '</b><small>opanowane na stałe</small></div><div class="kpi"><b>' + S.stats.listen + '</b><small>trafień ze słuchu</small></div></section>';
     h += '<h2 class="sec">Ćwiczenia</h2><section class="tiles">' + [
-      ['sciezka', 'route', 'Ścieżka A1–C2', UA.TOPICS.length + ' lekcji'], ['sluchanie', 'headphones', 'Słuchanie', 'słowa, zdania, czytanki'],
+      ['sciezka', 'route', 'Ścieżka A1–C2', UA.TOPICS.length + ' lekcji'], ['etap/tr_vokzal', 'globe', 'Podróż', 'dworzec, hotel, jedzenie, pomoc'], ['etap/ar_arhiv', 'book', 'Archiwum i historia', 'kwerendy, dokumenty, stare teksty'], ['sluchanie', 'headphones', 'Słuchanie', 'słowa, zdania, czytanki'],
       ['wymowa', 'ear', 'Wymowa', 'akanie, ы/и, miękkość, akcent'], ['dialogi', 'chat', 'Dialogi', Object.keys(S.dialogs).length + '/' + UA.DIALOGS.length + ' przećwiczone'],
       ['przyjaciele', 'alert', 'Fałszywi przyjaciele', S.stats.ff + ' trafień'], ['gramatyka', 'book', 'Gramatyka', 'tylko to, co inne'],
       ['alfabet', 'abc', 'Alfabet', 'litery i dźwięki'], ['dyktando', 'pen', 'Dyktando', 'słuchaj i pisz']
@@ -2136,11 +2509,12 @@ var UA = window.UA || (window.UA = {});
   V.nauka = function () { location.replace('#/trening/all'); };
   V.sciezka = function () {
     var cu = currentUnit();
-    var h = head('Ścieżka A1 → C2', 'Lekcje otwierają się po kolei: następna – gdy poznasz 70% słów poprzedniej. Możesz też przeskoczyć dalej, zdając test lekcji.');
+    var h = head('Ścieżka', 'Ścieżki tematyczne „Podróż” oraz „Archiwum i historia” są otwarte od razu. W ścieżce A1 → C2 lekcje otwierają się po kolei: następna – gdy poznasz 70% słów poprzedniej (albo po zdanym teście lekcji).');
     h += '<div class="row"><a class="btn primary" href="#/trening/all">' + ic('play') + 'Codzienny trening</a><a class="btn" href="#/test">' + ic('check') + 'Test wejściowy (słowa przezroczyste)</a></div>';
     LEVELS.forEach(function (lv) {
       var units = UA.TOPICS.filter(function (t) { return t.level === lv; }), ws = levelWords(lv), kn = ws.filter(seen).length, text = (UA.TEXTS || []).filter(function (t) { return t.level === lv; })[0];
-      h += '<section class="lvl ' + (levelUnlocked(lv) ? '' : 'locked') + '"><div class="lvlh"><span class="lvtag lv-' + lv + '">' + lv + '</span><div><b>Poziom ' + lv + ' – ' + LEVEL_NAME[lv] + '</b><small>' + kn + ' / ' + ws.length + ' słów · ' + units.length + ' lekcji</small></div></div>' + bar(kn, ws.length) +
+      if (lv === 'TR') h += '<h2 class="sec">Ścieżki tematyczne – otwarte od razu</h2>'; if (lv === 'A1') h += '<h2 class="sec">Ścieżka A1 → C2</h2>';
+      h += '<section class="lvl ' + (levelUnlocked(lv) ? '' : 'locked') + '"><div class="lvlh"><span class="lvtag lv-' + lv + '">' + lvLabel(lv) + '</span><div><b>' + (THEME[lv] ? THEME[lv][1] : 'Poziom ' + lv + ' – ' + LEVEL_NAME[lv]) + '</b><small>' + kn + ' / ' + ws.length + ' słów · ' + units.length + ' lekcji</small></div></div>' + bar(kn, ws.length) +
         '<div class="units">' + units.map(function (u) {
           var ok = unlocked(u), p = unitProg(u);
           return '<a class="unode ' + (ok ? '' : 'lock') + (u === cu ? ' cur' : '') + (p >= 1 ? ' done' : '') + '" href="#/etap/' + u.id + '">' + (ok ? ring(p, p >= 1 ? '✓' : Math.round(p * 100) + '%') : '<span class="ring lockic">' + ic('lock') + '</span>') + '<span class="uname">' + esc(u.name) + '</span><small>' + unitWords(u.id).length + ' słów</small></a>';
@@ -2153,11 +2527,14 @@ var UA = window.UA || (window.UA = {});
     var u = unitById(id); if (!u) return location.replace('#/sciezka');
     var ws = unitWords(id), ok = unlocked(u), p = unitProg(u), idx = UA.TOPICS.indexOf(u), nxt = UA.TOPICS[idx + 1];
     var fresh = ws.filter(function (w) { return !SRS.card(w, 'r'); }).length, due = ws.filter(function (w) { return ['r', 'p'].some(function (d) { var c = SRS.card(w, d); return c && c.d <= U.today(); }); }).length;
-    var h = head('<span class="lvtag lv-' + u.level + '">' + u.level + '</span> ' + esc(u.name), ws.length + ' słów · poznane: ' + Math.round(p * 100) + '%', '#/sciezka');
+    var h = head('<span class="lvtag lv-' + u.level + '\">' + lvLabel(u.level) + '</span> ' + esc(u.name), ws.length + ' słów · poznane: ' + Math.round(p * 100) + '%', '#/sciezka');
     if (!ok) h += '<section class="card warn"><h2>' + ic('lock') + ' Lekcja zablokowana</h2><p>Otworzy się, gdy poznasz 70% słów poprzedniej lekcji. Jeśli znasz już ten materiał – zdaj test lekcji (min. 80%), a odblokujesz ją od razu.</p></section>';
     h += '<section class="card unithead">' + ring(p, Math.round(p * 100) + '%') + '<div class="row">' +
       (ok ? '<a class="btn primary" href="#/trening/' + id + '">' + ic('play') + (fresh ? 'Ucz się (' + fresh + ' nowych)' : 'Trening lekcji') + '</a>' : '') +
       '<button class="btn" id="utest">' + ic('target') + 'Test lekcji (10 pytań)</button>' + (due ? '<span class="muted small">' + due + ' słów czeka na powtórkę</span>' : '') + '</div></section>';
+    var tips = (UA.TIPS || {})[id], dls = UA.DIALOGS.filter(function (d) { return d.unit === id; });
+    if (dls.length) h += '<div class="row">' + dls.map(function (d) { return '<a class="btn" href="#/dialog/' + d.id + '">' + ic('chat') + 'Dialog: ' + esc(d.t) + '</a>'; }).join('') + '</div>';
+    if (tips) h += '<section class="card tipcard"><h2>' + ic('alert') + ' Dobrze wiedzieć</h2><ul>' + tips.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></section>';
     h += '<section class="wlist">' + ws.map(function (w) {
       var r = SRS.card(w, 'r'), pc = SRS.card(w, 'p');
       return '<div class="wrow">' + say(w.ua) + '<div class="wmain"><div>' + uaw(w.ua) + '</div><div class="pl">' + esc(w.pl) + '</div>' + (w.ex ? '<div class="forms" lang="ru">' + st(w.ex) + '</div>' : '') + '</div><div class="wside"><span class="tag ' + SIM[w.sim][1] + '">' + SIM[w.sim][0] + '</span><span class="dots" title="rozpoznawanie / produkcja"><i class="' + (r && r.n ? (r.i >= 21 ? 'k' : 'l') : '') + '"></i><i class="' + (pc && pc.n ? (pc.i >= 21 ? 'k' : 'l') : '') + '"></i></span></div></div>';
@@ -2329,7 +2706,7 @@ var UA = window.UA || (window.UA = {});
     }
     function intro(e) {
       e.shown = true; var w = e.w;
-      $('#stage').innerHTML = '<div class="card fc introcard"><span class="newtag">nowe słowo</span><div class="meta">' + esc(POS[w.pos] || '') + ' · ' + lvOf(w) + '</div><div class="big">' + uaw(w.ua) + '</div><div class="sayrow">' + sayBoth(w.ua) + '</div><div class="pl bigpl">' + esc(w.pl) + '</div>' +
+      $('#stage').innerHTML = '<div class="card fc introcard"><span class="newtag">nowe słowo</span><div class="meta">' + esc(POS[w.pos] || '') + ' · ' + lvLabel(lvOf(w)) + '</div><div class="big">' + uaw(w.ua) + '</div><div class="sayrow">' + sayBoth(w.ua) + '</div><div class="pl bigpl">' + esc(w.pl) + '</div>' +
         (w.forms ? '<div class="forms" lang="ru">' + st(w.forms) + '</div>' : '') + '<div class="tags"><span class="tag ' + SIM[w.sim][1] + '">' + SIM[w.sim][0] + '</span></div>' +
         (w.ex ? '<div class="ex"><p lang="ru">' + st(w.ex) + ' ' + say(w.ex) + '</p><p class="muted">' + esc(w.exPl) + '</p></div>' : '') + '</div><div class="actions"><button class="btn primary block" id="gotit">Zapamiętane – sprawdź mnie <kbd>Enter</kbd></button></div>';
       if (S.settings.autoplay) SP.speak(w.ua);
@@ -2410,21 +2787,21 @@ var UA = window.UA || (window.UA = {});
     if (lv === 'moje') { var m = UA.WORDS.filter(seen); return m.length >= 12 ? m : levelWords('A1'); }
     return levelWords(lv);
   }
-  function defaultLv() { var lv = 'A1'; LEVELS.forEach(function (l) { if (levelUnlocked(l) && levelWords(l).some(seen)) lv = l; }); return lv; }
+  function defaultLv() { var lv = 'A1'; LEVELS.forEach(function (l) { if (THEME[l]) return; if (levelUnlocked(l) && levelWords(l).some(seen)) lv = l; }); return lv; }
   V.sluchanie = function (mode, lv) {
     lv = lv || defaultLv();
     if (mode) return listenRun(mode, lv);
     var vs = SP.voiceStatus();
     var h = head('Słuchanie', 'Aplikacja czyta na głos słowa, zdania i teksty – Ty sprawdzasz, czy zrozumiałeś. Przycisk „wolniej” odtwarza nagranie w tempie 0,65×.');
     if (!vs.ok) h += voiceHelp(vs);
-    h += '<div class="chips" role="group" aria-label="Poziom">' + LEVELS.concat(['moje']).map(function (l) { return '<a class="chip ' + (l === lv ? 'on' : '') + '" href="#/sluchanie//' + l + '">' + (l === 'moje' ? 'Moje słowa' : l) + '</a>'; }).join('') + '</div>';
+    h += '<div class="chips" role="group" aria-label="Poziom">' + LEVELS.concat(['moje']).map(function (l) { return '<a class="chip ' + (l === lv ? 'on' : '') + '" href="#/sluchanie//' + l + '">' + (l === 'moje' ? 'Moje słowa' : lvLabel(l)) + '</a>'; }).join('') + '</div>';
     h += '<section class="tiles">' + [
       ['slowa', 'headphones', 'Usłysz i zrozum', 'słowo → tłumaczenie'], ['pisownia', 'pen', 'Pisownia ze słuchu', 'które słowo słyszysz?'],
       ['zdania', 'chat', 'Zdania', 'co znaczy usłyszane zdanie?'], ['prawda', 'check', 'Prawda czy fałsz?', 'czy tłumaczenie pasuje?']
-    ].map(function (t) { return '<a class="tile" href="#/sluchanie/' + t[0] + '/' + lv + '">' + ic(t[1]) + '<b>' + t[2] + '</b><small>' + t[3] + ' · ' + (lv === 'moje' ? 'moje słowa' : lv) + '</small></a>'; }).join('') + '</section>';
+    ].map(function (t) { return '<a class="tile" href="#/sluchanie/' + t[0] + '/' + lv + '">' + ic(t[1]) + '<b>' + t[2] + '</b><small>' + t[3] + ' · ' + (lv === 'moje' ? 'moje słowa' : lvLabel(lv)) + '</small></a>'; }).join('') + '</section>';
     h += '<h2 class="sec">Czytanki ze słuchu</h2><section class="dlist">' + (UA.TEXTS || []).map(function (t) {
       var okL = levelUnlocked(t.level), sc = S.stats.texts[t.id];
-      return '<a class="card dl" href="#/czytanka/' + t.id + '"><span class="lvtag lv-' + t.level + '">' + t.level + '</span><div><b>' + esc(t.t) + '</b><small lang="ru">' + st(t.ua) + (okL ? '' : ' · poziom jeszcze zablokowany – możesz spróbować') + '</small></div>' + (sc != null ? '<span class="tag sim-t">' + sc + '/3</span>' : '') + '</a>';
+      return '<a class="card dl" href="#/czytanka/' + t.id + '"><span class="lvtag lv-' + t.level + '\">' + lvLabel(t.level) + '</span><div><b>' + esc(t.t) + '</b><small lang="ru">' + st(t.ua) + (okL ? '' : ' · poziom jeszcze zablokowany – możesz spróbować') + '</small></div>' + (sc != null ? '<span class="tag sim-t">' + sc + '/3</span>' : '') + '</a>';
     }).join('') + '</section>';
     h += '<h2 class="sec">Więcej ze słuchu</h2><section class="row"><a class="btn" href="#/dyktando">' + ic('pen') + 'Dyktando</a><a class="btn" href="#/wymowa/pary/yi">' + ic('ear') + 'Pary ы / и</a><a class="btn" href="#/dialogi">' + ic('chat') + 'Dialogi</a></section>';
     main.innerHTML = h;
@@ -2444,12 +2821,12 @@ var UA = window.UA || (window.UA = {});
       return { title: 'Czy tłumaczenie pasuje do nagrania?', prompt: listenBtn(w.ex) + '<p class="trq">„' + esc(shown.exPl) + '”</p>', say: w.ex, listen: true, opts: ['Tak, pasuje', 'Nie, nie pasuje'], a: truth ? 0 : 1, reveal: '<div class="ex"><p lang="ru">' + st(w.ex) + ' ' + say(w.ex) + '</p><p class="muted">' + esc(w.exPl) + '</p></div>' };
     });
     var names = { slowa: 'Usłysz i zrozum', pisownia: 'Pisownia ze słuchu', zdania: 'Zdania ze słuchu', prawda: 'Prawda czy fałsz?' };
-    runMC({ title: names[mode] + ' · ' + (lv === 'moje' ? 'moje słowa' : lv), back: back, items: items, counter: 'listen', again: function () { listenRun(mode, lv); } });
+    runMC({ title: names[mode] + ' · ' + (lv === 'moje' ? 'moje słowa' : lvLabel(lv)), back: back, items: items, counter: 'listen', again: function () { listenRun(mode, lv); } });
   }
   V.czytanka = function (id) {
     var t = (UA.TEXTS || []).filter(function (x) { return x.id === id; })[0]; if (!t) return location.replace('#/sluchanie');
     var showT = false, showP = false, rate = S.settings.rate;
-    var h = head('<span class="lvtag lv-' + t.level + '">' + t.level + '</span> ' + esc(t.t), '<span lang="ru">' + st(t.ua) + '</span> · najpierw posłuchaj, potem odpowiedz na pytania. Tekst możesz odsłonić.', '#/sluchanie');
+    var h = head('<span class="lvtag lv-' + t.level + '\">' + lvLabel(t.level) + '</span> ' + esc(t.t), '<span lang="ru">' + st(t.ua) + '</span> · najpierw posłuchaj, potem odpowiedz na pytania. Tekst możesz odsłonić.', '#/sluchanie');
     h += '<section class="card"><div class="row"><button class="btn primary" id="play">' + ic('play') + 'Odtwórz tekst</button><button class="btn" id="slow">' + ic('slow') + 'Wolniej</button><button class="btn" id="tt">' + ic('eye') + 'Pokaż tekst</button><button class="btn ghost" id="tp">Tłumaczenie</button></div><div id="txt"></div></section>';
     h += '<h2 class="sec">Pytania</h2>' + t.qs.map(function (q, i) { return '<div class="card qz" data-q="' + i + '"><p><b>' + (i + 1) + '.</b> ' + esc(q[0]) + '</p><div class="opts">' + q[1].map(function (o, k) { return '<button class="btn opt" data-k="' + k + '"><span>' + esc(o) + '</span></button>'; }).join('') + '</div></div>'; }).join('') + '<div id="sum"></div>';
     main.innerHTML = h;
@@ -2509,8 +2886,8 @@ var UA = window.UA || (window.UA = {});
      SŁOWNIK
      ============================================================ */
   V.slownik = function (topic) {
-    var h = head('Słownik', UA.WORDS.length + ' słów od A1 do C2. Szukaj po rosyjsku (bez akcentów, ё = е) lub po polsku.');
-    h += '<div class="filters"><input id="q" type="search" placeholder="Szukaj…" aria-label="Szukaj"><select id="ft" aria-label="Temat"><option value="">Wszystkie tematy</option>' + UA.TOPICS.map(function (t) { return '<option value="' + t.id + '"' + (t.id === topic ? ' selected' : '') + '>' + t.level + ' · ' + esc(t.name) + '</option>'; }).join('') + '</select>' +
+    var h = head('Słownik', UA.WORDS.length + ' słów: A1–C2, podróż, archiwum i historia. Szukaj po rosyjsku (bez akcentów, ё = е) lub po polsku.');
+    h += '<div class="filters"><input id="q" type="search" placeholder="Szukaj…" aria-label="Szukaj"><select id="ft" aria-label="Temat"><option value="">Wszystkie tematy</option>' + UA.TOPICS.map(function (t) { return '<option value="' + t.id + '"' + (t.id === topic ? ' selected' : '') + '>' + lvLabel(t.level) + ' · ' + esc(t.name) + '</option>'; }).join('') + '</select>' +
       '<select id="fs" aria-label="Podobieństwo"><option value="">Każde podobieństwo</option>' + Object.keys(SIM).map(function (k) { return '<option value="' + k + '">' + SIM[k][0] + '</option>'; }).join('') + '</select></div><div id="list" class="wlist"></div>';
     main.innerHTML = h;
     function draw() {
@@ -2913,7 +3290,7 @@ var UA = window.UA || (window.UA = {});
     h += '<section class="card"><h2>' + ic('vol') + ' Głos</h2><p>' + (vs.ok ? 'Używany głos: <b>' + esc(vs.name) + '</b>' : esc(vs.msg)) + '</p><button class="btn" data-say="Приве́т! Э́то ру́сский язы́к.">' + ic('play') + ' Test głosu</button></section>';
     if (!vs.ok) h += voiceHelp(vs);
     h += '<section class="card"><h2>Postęp</h2><p class="muted">Postęp jest zapisany tylko w tej przeglądarce. Zrób kopię, żeby przenieść go na inne urządzenie.</p><div class="row"><button class="btn" id="exp">Eksportuj (plik)</button><label class="btn">Importuj<input type="file" id="imp" accept=".json,application/json" hidden></label><button class="btn danger" id="rst">Wyzeruj wszystko</button></div></section>';
-    h += '<section class="card note"><h2>O treściach</h2><p>Słownictwo: ' + UA.WORDS.length + ' słów w ' + UA.TOPICS.length + ' lekcjach (A1–C2), ' + (UA.TEXTS || []).length + ' czytanek, ' + UA.FRIENDS.length + ' fałszywych przyjaciół, ' + UA.DIALOGS.length + ' dialogów, ' + UA.GRAMMAR.length + ' lekcji gramatyki. Współczesny rosyjski standardowy, akcent zaznaczony w każdym słowie.</p><p><b>Ważne:</b> treść przygotowano bez udziału native speakera. Akcenty, przykłady i dialogi warto skonsultować z rusycystą – tego nie zastąpi ani model językowy, ani synteza mowy.</p></section>';
+    h += '<section class="card note"><h2>O treściach</h2><p>Słownictwo: ' + UA.WORDS.length + ' słów w ' + UA.TOPICS.length + ' lekcjach (A1–C2 + ścieżki „Podróż” i „Archiwum i historia”), ' + (UA.TEXTS || []).length + ' czytanek, ' + UA.FRIENDS.length + ' fałszywych przyjaciół, ' + UA.DIALOGS.length + ' dialogów, ' + UA.GRAMMAR.length + ' lekcji gramatyki. Współczesny rosyjski standardowy, akcent zaznaczony w każdym słowie.</p><p><b>Ważne:</b> treść przygotowano bez udziału native speakera. Akcenty, przykłady i dialogi warto skonsultować z rusycystą – tego nie zastąpi ani model językowy, ani synteza mowy.</p></section>';
     main.innerHTML = h;
     function upd(k, v) { s[k] = v; G.save(); }
     $('#npd').onchange = function () { upd('newPerDay', Math.max(0, Math.min(50, +this.value || 0))); };

@@ -1,5 +1,5 @@
 /* Service worker: praca offline (aplikacja i czcionki) */
-var VERSION = 'd0fe7ed650';
+var VERSION = '415a0318ed';
 var CORE = 'ru-core-' + VERSION;
 var FONTS = 'ru-fonts-v1';
 var ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
