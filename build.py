@@ -30,7 +30,7 @@ html = bundle(True)
 open(os.path.join(docs, 'index.html'), 'w', encoding='utf-8').write(html)
 manifest = {
     'id': 'rosyjski-dla-polaka',
-    'name': 'Rosyjski dla Polaka', 'short_name': 'Rosyjski', 'lang': 'pl',
+    'name': 'Rosyjski', 'short_name': 'Rosyjski', 'lang': 'pl',
     'description': 'Nauka języka rosyjskiego dla osób polskojęzycznych.',
     'start_url': './', 'scope': './', 'display': 'standalone', 'orientation': 'portrait',
     'background_color': '#0a0f1e', 'theme_color': '#0a0f1e',
